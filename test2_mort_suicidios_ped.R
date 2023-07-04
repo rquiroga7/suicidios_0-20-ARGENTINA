@@ -1,6 +1,6 @@
 
 library(pacman)
-p_load(httr,readxl,dplyr,ggplot2,scales,ggrepel,viridis,padr,gganimate,wesanderson,readr,forcats,kableExtra,tidyr,mgcv,MASS,lubridate)
+p_load(httr,readxl,dplyr,ggplot2,scales,ggrepel,viridis,padr,gganimate,wesanderson,readr,forcats,kableExtra,tidyr,mgcv,MASS,lubridate,ggborderline)
 Sys.setlocale("LC_ALL","English")
 `%notin%` <- Negate(`%in%`)
 ma <- function(x, n = 7){stats::filter(x, rep(1 / n, n), sides = 1)}
@@ -55,12 +55,12 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
  ggsave(fname, plot, dpi = 400, width = 18, height = 10)
  return(plot)
 }
-plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO',date_breaks="1 year",point_size=0.5,line_size=0.5){
+plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO',date_breaks="1 year",point_size=1,line_size=1){
  plot <- ggplot() +
-  geom_point(data = dataframe , aes(x = .data[[col_x]], y = cantidad),size=point_size) +
-  geom_line(data = dataframe , aes(x = .data[[col_x]], y = cantidad),linewidth = line_size) +
-  geom_line(data = dataframe , aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]]),linewidth=line_size) +
   geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
+  geom_borderline(data = dataframe , aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]]),size=line_size) +
+  geom_borderline(data = dataframe , aes(x = .data[[col_x]], y = cantidad),size = line_size) +
+  geom_point(data = dataframe , aes(x = .data[[col_x]], y = cantidad),size=point_size) +
   facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
   labs(x = "Año-Mes", y = "Fallecidos mensuales") +
   theme_bw(base_size=18) +
@@ -322,8 +322,8 @@ for (i in seq_along(etario_levels)) {
  df_plot3 <- df_plot3 %>%
   mutate(fecha = as.Date(paste0("01/", mes_def, "/", anio_def), format = "%d/%m/%Y"))
  if (etario_level == "0-20") {
-                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10 != "ALZHEIMER"), paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes",point_size=1.0,line_size=0.8)
-                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), paste0(etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="no",date_breaks="3 months",point_size=2.5,line_size=1.9)
+                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10 != "ALZHEIMER"), paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes",point_size=0.01,line_size=0.8)
+                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), paste0(etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="no",date_breaks="3 months",point_size=3,line_size=2.5)
                               }
  else {plot_abs_data_line(df_plot3, paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes")}
 }
