@@ -55,14 +55,14 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
  ggsave(fname, plot, dpi = 400, width = 18, height = 10)
  return(plot)
 }
-plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO'){
+plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO',date_breaks="1 year"){
  plot <- ggplot() +
   geom_point(size=1,data = dataframe , aes(x = .data[[col_x]], y = cantidad)) +
   geom_line(data = dataframe , aes(x = .data[[col_x]], y = cantidad)) +
   geom_line(data = dataframe , aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]])) +
   geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
   facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
-  labs(x = "Año", y = "Fallecidos anuales") +
+  labs(x = "Año-Mes", y = "Fallecidos mensuales") +
   theme_bw(base_size=18) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5))+
   scale_y_continuous(minor_breaks = NULL)+
@@ -71,7 +71,7 @@ plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x=
   plot <- plot + geom_vline(xintercept = as.numeric(as.Date("2020-09-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2021-05-01")), color = "red")
  }
  if(is.Date(dataframe[[col_x]])){
-  plot <- plot + scale_x_date(minor_breaks = NULL,date_breaks = "1 year", date_labels = "%m-%Y", limits = c(as.Date("2015-01-01"), as.Date("2022-01-01")), expand = c(0,0))
+  plot <- plot + scale_x_date(minor_breaks = NULL,date_breaks = date_breaks, date_labels = "%m-%Y", limits = c(as.Date("2015-01-01"), as.Date("2022-01-01")), expand = c(0,0))
  } else {
   plot <- plot + scale_x_continuous(minor_breaks = NULL,breaks = seq(2015, 2021, by = 1))
  }
@@ -300,6 +300,8 @@ levels(datamort2$grupo_etario)<- c("0-20","20-39","40-49","50-59","60-69","70-79
 ######################################################
 # Get unique levels of grupo_etario
 etario_levels <- levels(datamort2$grupo_etario)
+etario_levels<- etario_levels[1]
+
 # Create empty list to store results
 df_plot3_list <- list()
 # Loop over each level of grupo_etario
@@ -321,7 +323,7 @@ for (i in seq_along(etario_levels)) {
   mutate(fecha = as.Date(paste0("01/", mes_def, "/", anio_def), format = "%d/%m/%Y"))
  if (etario_level == "0-20") {
                                plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10 != "ALZHEIMER"), paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes")
-                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), paste0(etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="no")
+                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), paste0(etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="no",date_breaks="3 months")
                               }
  else {plot_abs_data_line(df_plot3, paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes")}
 }
