@@ -8,4 +8,4 @@ El primer gráfico que arroja el código grafica las muertes mensuales esperadas
 
 El segundo gráfico indica la cantidad de suicidios mensuales para el grupo etario de 0 a 20 años en negro, y en rojo la cantidad esperada en base a las tendencias 2015-2019.
 
-![Suicidios mensuales 0-20 años Argentina](http://url/to/img.png)
+![Suicidios mensuales 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_SUICIDIOS.png)
