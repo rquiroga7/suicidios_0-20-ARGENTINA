@@ -4,7 +4,7 @@ El código que proveo en el archivo test2_mort_suicidios_ped.R permite generar/e
 
 El primer gráfico que arroja el código grafica las muertes mensuales esperadas por cada grupo de causas para el grupo etario de 0 a 20 años en distintos colores, y las muertes reales observadas en color negro. Se indican como dos líneas rojas verticales los meses que corresponden a los picos de casos de COVID-19 en 2020 y 2021.
 
-![Mortalidad mensual por distintas causas 0-20 años Argentina](http://url/to/img.png)
+![Mortalidad mensual por distintas causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_causas_picos.png)
 
 El segundo gráfico indica la cantidad de suicidios mensuales para el grupo etario de 0 a 20 años en negro, y en rojo la cantidad esperada en base a las tendencias 2015-2019.
 
