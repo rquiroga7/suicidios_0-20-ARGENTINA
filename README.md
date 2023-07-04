@@ -1,3 +1,3 @@
 # suicidios_0-20-ARGENTINA
 El código de este repositorio puede utilizarse para analizar y graficar la mortalidad por distintos grupos de causas en Argentina para los años 2015-2021 inclusive. Los datos provienen del DEIS MinSal (http://datos.salud.gob.ar/dataset/datos-salud-gob-ar-dataset-defunciones-mensuales-ocurridas-en-la-republica-argentina).
-El código que proveo en el archivo tes2_http://datos.salud.gob.ar/dataset/datos-salud-gob-ar-dataset-defunciones-mensuales-ocurridas-en-la-republica-argentina
+El código que proveo en el archivo test2_mort_suicidios_ped.R permite generar/entrenar modelos GAM (modelos generales aditivos) en base a los datos de mortalidad 2015-2019 que permiten capturar tendencias crecientes, decrecientes y estacionales para cada causa de muerte, por grupo etario. Esto permite estimar cuantas muertes esperaríamos por cada causa (mejor dicho, grupo de causas) para cada mes de 2020 y 2021.
