@@ -18,4 +18,8 @@ El cuarto gráfico presenta los suicidios anuales en el grupo de 0 a 20 años de
 
 ![Suicidios anuales por región 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_SUICIDIOS_POR_REGION.png)
 
+El quinto gráfico muestra los suicidios anuales desagregados por región y sexo para el grupo de 0 a 20 años. Los varones se representan en azul y las mujeres en rojo, permitiendo comparar las tendencias entre sexos dentro de cada región geográfica.
+
+![Suicidios anuales por región y sexo 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png)
+
 Ante cualquier duda, sugerencia o correcciones que tengan, contactarse conmigo por Twitter: https://twitter.com/rquiroga777
