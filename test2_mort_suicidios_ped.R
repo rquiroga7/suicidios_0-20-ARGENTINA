@@ -131,6 +131,14 @@ for (i in seq_along(etario_levels)) {
  if(nrow(cantidad_anual_suic_region) > 0) {
   plot_annual_simple(cantidad_anual_suic_region, paste0(etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION.png"), col_group='region', title=paste0("Suicidios anuales por Región, edad = ", etario_level))
  }
+ 
+ # Generate annual suicide plots by region and sex
+ cantidad_anual_suic_region_sex <- aggregate(cantidad ~ region + anio_def + sexo_nombre, 
+                                             data = subset_data %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO" & sexo_nombre %in% c("Varones", "Mujeres")), 
+                                             sum)
+ if(nrow(cantidad_anual_suic_region_sex) > 0) {
+  plot_annual_simple(cantidad_anual_suic_region_sex, paste0(etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png"), col_group='sexo_nombre', title=paste0("Suicidios anuales por Región y Sexo, edad = ", etario_level), facet_var='region', manual_colors=c("Varones"="blue", "Mujeres"="red"))
+ }
 }
 
 

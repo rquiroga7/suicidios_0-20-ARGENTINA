@@ -175,17 +175,30 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
  return(plot)
 }
 
-plot_annual_simple <- function(dataframe, fname, col_group='grupo_causa_defuncion_CIE10',title='Titulo'){
+plot_annual_simple <- function(dataframe, fname, col_group='grupo_causa_defuncion_CIE10',title='Titulo',facet_var=NULL,manual_colors=NULL){
  plot <- ggplot(data = dataframe, aes(x = anio_def, y = cantidad, color = .data[[col_group]])) +
-  geom_line(size = 1.2) +
+  geom_borderline(size = 1.2) +
   geom_point(size = 2) +
-  facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
   labs(x = "Año", y = "Fallecidos anuales", caption = "Datos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size=18) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
   scale_y_continuous(minor_breaks = NULL)+
   scale_x_continuous(breaks = seq(2015, 2023, by = 1))+
   ggtitle(title)
+ 
+ # Add facet_wrap based on facet_var parameter
+ if(!is.null(facet_var)){
+  plot <- plot + facet_wrap(~.data[[facet_var]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "bottom", legend.title = element_text(size=16), legend.text = element_text(size=14), strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))
+ } else {
+  plot <- plot + facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))
+ }
+ 
+ # Add manual colors if provided
+ if(!is.null(manual_colors)){
+  plot <- plot + scale_color_manual(values = manual_colors, name = "Sexo")
+ }
+ 
  ggsave(fname, plot, dpi = 400, width = 18, height = 10)
  return(plot)
 }
