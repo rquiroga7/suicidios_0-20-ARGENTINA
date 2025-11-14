@@ -167,7 +167,7 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
   plot <- plot + geom_vline(xintercept = as.numeric(as.Date("2020-09-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2021-05-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2022-01-01")), color = "red")
  }
  if(is.Date(dataframe[[col_x]])){
-  plot <- plot + scale_x_date(minor_breaks = NULL,date_breaks = date_breaks, date_labels = "%m-%Y", limits = c(as.Date("2015-01-01"), as.Date("2024-01-01")), expand = c(0,0))
+  plot <- plot + scale_x_date(minor_breaks = NULL,date_breaks = "1 year", date_labels = "%m-%Y", limits = c(as.Date("2015-01-01"), as.Date("2022-01-01")), expand = c(0,0))
  } else {
   plot <- plot + scale_x_continuous(minor_breaks = NULL,breaks = seq(2015, 2021, by = 1))
  }
@@ -204,20 +204,21 @@ plot_annual_simple <- function(dataframe, fname, col_group='grupo_causa_defuncio
 }
 
 plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO',date_breaks="1 year",point_size=1,line_size=1,facet_ncol=NULL){
- plot <- ggplot() +
-  geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
-  geom_borderline(data = dataframe , aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]]),size=line_size) +
-  geom_borderline(data = dataframe , aes(x = .data[[col_x]], y = cantidad),size = line_size) +
-  geom_point(data = dataframe , aes(x = .data[[col_x]], y = cantidad),size=point_size) +
+ plot <- ggplot(data = dataframe)
+ if(tolower(peaks) == "yes") {
+  plot <- plot + geom_vline(xintercept = as.numeric(as.Date("2020-09-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2021-05-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2022-01-01")), color = "red")
+ }
+ plot <- plot +
+  geom_ribbon(aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
+  geom_borderline(aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]]),size=line_size) +
+  geom_borderline(aes(x = .data[[col_x]], y = cantidad),size = line_size) +
+  geom_point(aes(x = .data[[col_x]], y = cantidad),size=point_size) +
   facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18)), ncol=facet_ncol) +
   labs(x = "Año-Mes", y = "Fallecidos mensuales", caption = "Línea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ año + mes). Intervalo de confianza: 95%. Las líneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size=18) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
   scale_y_continuous(minor_breaks = NULL)+
   ggtitle(title)
- if(tolower(peaks) == "yes") {
-  plot <- plot + geom_vline(xintercept = as.numeric(as.Date("2020-09-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2021-05-01")), color = "red") + geom_vline(xintercept = as.numeric(as.Date("2022-01-01")), color = "red")
- }
  if(is.Date(dataframe[[col_x]])){
   plot <- plot + scale_x_date(minor_breaks = NULL,date_breaks = date_breaks, date_labels = "%m-%Y", limits = c(as.Date("2015-01-01"), as.Date("2024-01-01")), expand = c(0,0))
  } else {
