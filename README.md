@@ -10,4 +10,12 @@ El segundo gráfico indica la cantidad de suicidios mensuales para el grupo etar
 
 ![Suicidios mensuales 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_SUICIDIOS.png)
 
+El tercer gráfico muestra la mortalidad anual total por distintas causas para el grupo etario de 0 a 20 años, sin proyecciones estadísticas, permitiendo una visualización más simple de las tendencias anuales.
+
+![Mortalidad anual por causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_causas_simple.png)
+
+El cuarto gráfico presenta los suicidios anuales en el grupo de 0 a 20 años desagregados por región geográfica. Las regiones se agrupan en: NOA (Noroeste Argentino), NEA (Noreste Argentino), Cuyo, Centro y Patagonia, permitiendo observar diferencias regionales en las tendencias de mortalidad por suicidio.
+
+![Suicidios anuales por región 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_SUICIDIOS_POR_REGION.png)
+
 Ante cualquier duda, sugerencia o correcciones que tengan, contactarse conmigo por Twitter: https://twitter.com/rquiroga777
