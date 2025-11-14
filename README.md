@@ -22,4 +22,6 @@ El quinto gráfico muestra los suicidios anuales desagregados por región y sexo
 
 ![Suicidios anuales por región y sexo 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png)
 
+La única tendencia clara que parece haber para los suicidios entre los menores de 20 en Argentina es un aumento de los suicidios entre mujeres en el NEA.
+
 Ante cualquier duda, sugerencia o correcciones que tengan, contactarse conmigo por Twitter: https://twitter.com/rquiroga777
