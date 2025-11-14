@@ -4,19 +4,21 @@ El código que proveo en el archivo test2_mort_suicidios_ped.R permite generar/e
 
 El primer gráfico que arroja el código grafica las muertes mensuales esperadas por cada grupo de causas para el grupo etario de 0 a 20 años en distintos colores, y las muertes reales observadas en color negro. Se indican como dos líneas rojas verticales los meses que corresponden a los picos de casos de COVID-19 en 2020, 2021 y 2022.
 
-![Mortalidad mensual por distintas causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_causas_picos.png)
+![Mortalidad mensual por distintas causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/plots/0-20_tendencias_mortalidad_mensual_causas_picos.png)
 
 El segundo gráfico indica la cantidad de suicidios mensuales para el grupo etario de 0 a 20 años desagregados por sexo (Varones y Mujeres) en negro, en azul la cantidad esperada para varones en base a las tendencias 2015-2019, y en rojo la cantidad esperada para mujeres.
 
-![Suicidios mensuales 0-20 años Argentina por sexo](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_SUICIDIOS_POR_SEXO.png)
+![Suicidios mensuales 0-20 años Argentina por sexo](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/plots/0-20_tendencias_mortalidad_mensual_SUICIDIOS_POR_SEXO.png)
 
 El tercer gráfico muestra la mortalidad anual total por distintas causas para el grupo etario de 0 a 20 años, sin proyecciones estadísticas, permitiendo una visualización más simple de las tendencias anuales. Una conclusión que puede sacarse es que a partir de la pandemia no hubo un aumento del número de suicidios adolescentes en Argentina, a contramano de lo que muchos periodistas y médicos dijeron. Al contrario, se observa una disminución del número anual de suicidios a partir de 2020 en comparación al período 2015-2019.
 
-![Mortalidad anual por causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_causas_simple.png)
+![Mortalidad anual por causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/plots/0-20_mortalidad_anual_causas_simple.png)
 
-El cuarto gráfico muestra los suicidios anuales desagregados por región y sexo para el grupo de 0 a 20 años. Los varones se representan en azul y las mujeres en rojo, permitiendo comparar las tendencias entre sexos dentro de cada región geográfica. Las regiones se agrupan en: NOA (Noroeste Argentino), NEA (Noreste Argentino), Cuyo, Centro y Patagonia, permitiendo observar diferencias regionales en las tendencias de mortalidad por suicidio.
+El cuarto gráfico presenta los suicidios anuales en el grupo de 0 a 20 años desagregados por región geográfica. Las regiones se agrupan en: NOA (Noroeste Argentino), NEA (Noreste Argentino), Cuyo, Centro y Patagonia, permitiendo observar diferencias regionales en las tendencias de mortalidad por suicidio.
 
-![Suicidios anuales por región y sexo 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png)
+![Suicidios anuales por región 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/plots/0-20_mortalidad_anual_SUICIDIOS_POR_REGION.png)
+
+![Suicidios anuales por región y sexo 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/plots/0-20_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png)
 
 La única tendencia clara que parece haber para los suicidios entre los menores de 20 en Argentina es un aumento de los suicidios entre mujeres en el NEA. 
 

@@ -68,7 +68,7 @@ levels(datamort_15_23$grupo_etario)<- c("0-20","20-39","40-59","40-59","60+","60
 ######################################################
 # Get unique levels of grupo_etario
 etario_levels <- levels(datamort_15_23$grupo_etario)
-#etario_levels<- etario_levels[1:2]
+etario_levels<- etario_levels[-5]
 
 # Create empty list to store results
 df_plot3_list <- list()
@@ -94,8 +94,8 @@ for (i in seq_along(etario_levels)) {
  df_plot3 <- df_plot3 %>%
   mutate(fecha = as.Date(paste0("01/", mes_def, "/", anio_def), format = "%d/%m/%Y"))
  if (etario_level == "0-20" | etario_level == "20-39") {
-                               plot_abs_data_line(df_plot3, paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes",point_size=0.01,line_size=0.8)
-                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), paste0(etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="no",date_breaks="3 months",point_size=3,line_size=2.5)
+                               plot_abs_data_line(df_plot3, paste0("plots/",etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes",point_size=0.01,line_size=0.8)
+                               plot_abs_data_line(df_plot3 %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), paste0("plots/",etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="no",date_breaks="3 months",point_size=3,line_size=2.5)
                                
                                # Generate separate suicide plots by sex
                                # Calculate monthly counts by sex for suicides, filter out undefined sex
@@ -108,9 +108,9 @@ for (i in seq_along(etario_levels)) {
                                df_plot3_sex <- merge(df_plot2_sex, df_sex, by = c("sexo_nombre", "anio_def", "mes_def"))
                                df_plot3_sex <- df_plot3_sex %>%
                                  mutate(fecha = as.Date(paste0("01/", mes_def, "/", anio_def), format = "%d/%m/%Y"))
-                               plot_abs_data_line(df_plot3_sex, paste0(etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS_POR_SEXO.png"), col_group='sexo_nombre', col_x='fecha', title=paste0("Suicidios mensuales por Sexo, edad = ", etario_level), peaks="no",date_breaks="3 months",point_size=3,line_size=2.5,facet_ncol=1)
+                               plot_abs_data_line(df_plot3_sex, paste0("plots/",etario_level,"_tendencias_mortalidad_mensual_SUICIDIOS_POR_SEXO.png"), col_group='sexo_nombre', col_x='fecha', title=paste0("Suicidios mensuales por Sexo, edad = ", etario_level), peaks="no",date_breaks="3 months",point_size=3,line_size=2.5,facet_ncol=1)
                               }
- else {plot_abs_data_line(df_plot3, paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes")}
+ else {plot_abs_data_line(df_plot3, paste0("plots/",etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes")}
 }
 
 # Generate annual plots without GAM projections for all age groups
@@ -122,14 +122,14 @@ for (i in seq_along(etario_levels)) {
  if (etario_level == "0-20" | etario_level == "20-39") {
   cantidad_anual <- cantidad_anual %>% filter(grupo_causa_defuncion_CIE10 != "ALZHEIMER")
  }
- plot_annual_simple(cantidad_anual, paste0(etario_level,"_mortalidad_anual_causas_simple.png"), col_group='grupo_causa_defuncion_CIE10', title=paste0("Fallecidos anuales por Causa, edad = ", etario_level))
+ plot_annual_simple(cantidad_anual, paste0("plots/",etario_level,"_mortalidad_anual_causas_simple.png"), col_group='grupo_causa_defuncion_CIE10', title=paste0("Fallecidos anuales por Causa, edad = ", etario_level))
  
  # Generate annual suicide plots by region
  cantidad_anual_suic_region <- aggregate(cantidad ~ region + anio_def, 
                                          data = subset_data %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), 
                                          sum)
  if(nrow(cantidad_anual_suic_region) > 0) {
-  plot_annual_simple(cantidad_anual_suic_region, paste0(etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION.png"), col_group='region', title=paste0("Suicidios anuales por Región, edad = ", etario_level))
+  plot_annual_simple(cantidad_anual_suic_region, paste0("plots/",etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION.png"), col_group='region', title=paste0("Suicidios anuales por Región, edad = ", etario_level))
  }
  
  # Generate annual suicide plots by region and sex
@@ -137,11 +137,9 @@ for (i in seq_along(etario_levels)) {
                                              data = subset_data %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO" & sexo_nombre %in% c("Varones", "Mujeres")), 
                                              sum)
  if(nrow(cantidad_anual_suic_region_sex) > 0) {
-  plot_annual_simple(cantidad_anual_suic_region_sex, paste0(etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png"), col_group='sexo_nombre', title=paste0("Suicidios anuales por Región y Sexo, edad = ", etario_level), facet_var='region', manual_colors=c("Varones"="blue", "Mujeres"="red"))
+  plot_annual_simple(cantidad_anual_suic_region_sex, paste0("plots/",etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION_Y_SEXO.png"), col_group='sexo_nombre', title=paste0("Suicidios anuales por Región y Sexo, edad = ", etario_level), facet_var='region', manual_colors=c("Varones"="blue", "Mujeres"="red"))
  }
 }
-
-
 
 # Filter data for Córdoba and suicides in 0-20 age group
 cordoba_suic <- datamort_15_23 %>% 
@@ -166,4 +164,4 @@ ggplot(cantidad_anual_cordoba, aes(x = anio_def, y = cantidad)) +
         plot.title = element_text(vjust = 0.5, hjust = 0.5),
         plot.caption = element_text(size = 12, hjust = 0))
 
-ggsave("0-20_suicidios_anuales_CORDOBA.png", dpi = 400, width = 18, height = 10)
+ggsave("plots/0-20_suicidios_anuales_CORDOBA.png", dpi = 400, width = 18, height = 10)
