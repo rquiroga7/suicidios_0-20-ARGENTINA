@@ -61,14 +61,14 @@ levels(datamort_15_23$grupo_causa_defuncion_CIE10)<-c("ENF INFECCIOSAS","TUMORES
 #FACTOR EDAD
 datamort_15_23$grupo_etario<-as.factor(datamort_15_23$grupo_etario)
 #CHANGE AGE NAMES
-levels(datamort_15_23$grupo_etario)<- c("0-20","20-39","40-49","50-59","60-69","70-79","80-200","Desconocido")
+levels(datamort_15_23$grupo_etario)<- c("0-20","20-39","40-59","40-59","60+","60+","60+","Desconocido")
 
 ######################################################
 ##########MENSUAL POR CAUSA Y GRUPO ETARIO###########
 ######################################################
 # Get unique levels of grupo_etario
 etario_levels <- levels(datamort_15_23$grupo_etario)
-etario_levels<- etario_levels[1:2]
+#etario_levels<- etario_levels[1:2]
 
 # Create empty list to store results
 df_plot3_list <- list()
@@ -142,3 +142,28 @@ for (i in seq_along(etario_levels)) {
 }
 
 
+
+# Filter data for Córdoba and suicides in 0-20 age group
+cordoba_suic <- datamort_15_23 %>% 
+  filter(grupo_etario == "0-20" & 
+         grupo_causa_defuncion_CIE10 == "SUICIDIO" & 
+         grepl("Córdoba|Cordoba", jurisdiccion, ignore.case = TRUE))
+
+# Annual suicide counts for Córdoba
+cantidad_anual_cordoba <- aggregate(cantidad ~ anio_def, data = cordoba_suic, sum)
+
+# Plot
+ggplot(cantidad_anual_cordoba, aes(x = anio_def, y = cantidad)) +
+  geom_borderline(size = 2, color = "darkblue") +
+  geom_point(size = 4, color = "darkblue") +
+  labs(x = "Año", y = "Suicidios anuales", 
+       title = "Suicidios anuales 0-20 años - Córdoba",
+       caption = "Datos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga.") +
+  theme_bw(base_size = 18) +
+  scale_x_continuous(breaks = seq(2015, 2023, by = 1)) +
+  scale_y_continuous(minor_breaks = NULL) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1),
+        plot.title = element_text(vjust = 0.5, hjust = 0.5),
+        plot.caption = element_text(size = 12, hjust = 0))
+
+ggsave("0-20_suicidios_anuales_CORDOBA.png", dpi = 400, width = 18, height = 10)
