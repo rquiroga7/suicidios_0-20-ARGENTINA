@@ -101,3 +101,24 @@ for (i in seq_along(etario_levels)) {
  else {plot_abs_data_line(df_plot3, paste0(etario_level,"_tendencias_mortalidad_mensual_causas_picos.png"), col_group='grupo_causa_defuncion_CIE10', col_x='fecha', title=paste0("Fallecidos mensuales por Causa, edad = ", etario_level), peaks="yes")}
 }
 
+# Generate annual plots without GAM projections for all age groups
+for (i in seq_along(etario_levels)) {
+ etario_level <- etario_levels[i]
+ subset_data <- datamort_15_23[datamort_15_23$grupo_etario == etario_level, ]
+ cantidad_anual <- aggregate(cantidad ~ grupo_causa_defuncion_CIE10 + anio_def, data = subset_data, sum)
+ # Filter out ALZHEIMER for young age groups
+ if (etario_level == "0-20" | etario_level == "20-39") {
+  cantidad_anual <- cantidad_anual %>% filter(grupo_causa_defuncion_CIE10 != "ALZHEIMER")
+ }
+ plot_annual_simple(cantidad_anual, paste0(etario_level,"_mortalidad_anual_causas_simple.png"), col_group='grupo_causa_defuncion_CIE10', title=paste0("Fallecidos anuales por Causa, edad = ", etario_level))
+ 
+ # Generate annual suicide plots by region
+ cantidad_anual_suic_region <- aggregate(cantidad ~ region + anio_def, 
+                                         data = subset_data %>% filter(grupo_causa_defuncion_CIE10=="SUICIDIO"), 
+                                         sum)
+ if(nrow(cantidad_anual_suic_region) > 0) {
+  plot_annual_simple(cantidad_anual_suic_region, paste0(etario_level,"_mortalidad_anual_SUICIDIOS_POR_REGION.png"), col_group='region', title=paste0("Suicidios anuales por Región, edad = ", etario_level))
+ }
+}
+
+

@@ -175,6 +175,21 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
  return(plot)
 }
 
+plot_annual_simple <- function(dataframe, fname, col_group='grupo_causa_defuncion_CIE10',title='Titulo'){
+ plot <- ggplot(data = dataframe, aes(x = anio_def, y = cantidad, color = .data[[col_group]])) +
+  geom_line(size = 1.2) +
+  geom_point(size = 2) +
+  facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
+  labs(x = "Año", y = "Fallecidos anuales", caption = "Datos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
+  theme_bw(base_size=18) +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
+  scale_y_continuous(minor_breaks = NULL)+
+  scale_x_continuous(breaks = seq(2015, 2023, by = 1))+
+  ggtitle(title)
+ ggsave(fname, plot, dpi = 400, width = 18, height = 10)
+ return(plot)
+}
+
 plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO',date_breaks="1 year",point_size=1,line_size=1,facet_ncol=NULL){
  plot <- ggplot() +
   geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
