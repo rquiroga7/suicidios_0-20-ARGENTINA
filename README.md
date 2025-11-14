@@ -6,9 +6,9 @@ El primer gráfico que arroja el código grafica las muertes mensuales esperadas
 
 ![Mortalidad mensual por distintas causas 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_causas_picos.png)
 
-El segundo gráfico indica la cantidad de suicidios mensuales para el grupo etario de 0 a 20 años en negro, y en rojo la cantidad esperada en base a las tendencias 2015-2019.
+El segundo gráfico indica la cantidad de suicidios mensuales para el grupo etario de 0 a 20 años desagregados por sexo (Varones y Mujeres) en negro, en azul la cantidad esperada para varones en base a las tendencias 2015-2019, y en rojo la cantidad esperada para mujeres.
 
-![Suicidios mensuales 0-20 años Argentina](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_SUICIDIOS.png)
+![Suicidios mensuales 0-20 años Argentina por sexo](https://github.com/rquiroga7/suicidios_0-20-ARGENTINA/blob/main/0-20_tendencias_mortalidad_mensual_SUICIDIOS_POR_SEXO.png)
 
 El tercer gráfico muestra la mortalidad anual total por distintas causas para el grupo etario de 0 a 20 años, sin proyecciones estadísticas, permitiendo una visualización más simple de las tendencias anuales.
 
