@@ -35,6 +35,18 @@ datamort_23$sexo_nombre <- gsub("2.Mujeres", "Mujeres", datamort_23$sexo_nombre,
 #MERGE DATA
 datamort_15_23 <- bind_rows(datamort_15_22,datamort_23)
 
+# Standardize and simplify region names
+datamort_15_23 <- datamort_15_23 %>%
+  mutate(region = case_when(
+    grepl("NOA|Noroeste", region, ignore.case = TRUE) ~ "NOA",
+    grepl("NEA|Noreste", region, ignore.case = TRUE) ~ "NEA",
+    grepl("Cuyo", region, ignore.case = TRUE) ~ "Cuyo",
+    grepl("Centro", region, ignore.case = TRUE) ~ "Centro",
+    grepl("Patag|Sur|Pat", region, ignore.case = TRUE) ~ "Patagonia",
+    TRUE ~ region
+  )) %>%
+  filter(!grepl("no especificad|sin especificar|desconocid", region, ignore.case = TRUE))
+
 #Check grupo_etario levels
 levels(as.factor(datamort_15_23$grupo_etario))
 
