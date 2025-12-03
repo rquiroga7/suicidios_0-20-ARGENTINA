@@ -158,7 +158,7 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
   geom_line(data = dataframe , aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]])) +
   geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
   facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
-  labs(x = "Año", y = "Fallecidos anuales", caption = "Línea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ año + mes). Intervalo de confianza: 95%. Las líneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
+  labs(x = "A\u00f1o", y = "Fallecidos anuales", caption = "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%. Las l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. An\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size=18) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
   scale_y_continuous(minor_breaks = NULL)+
@@ -181,9 +181,9 @@ plot_annual_simple <- function(dataframe, fname, col_group='grupo_causa_defuncio
  year_max <- max(year_range)
  
  plot <- ggplot(data = dataframe, aes(x = anio_def, y = cantidad, color = .data[[col_group]])) +
-  geom_borderline(size = 1.2) +
+  geom_borderline(linewidth = 1.2) +
   geom_point(size = 2) +
-  labs(x = "Año", y = "Fallecidos anuales", caption = "Datos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
+  labs(x = "A\u00f1o", y = "Fallecidos anuales", caption = "Datos del Ministerio de Salud Argentina - DEIS. An\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size=18) +
   scale_y_continuous(minor_breaks = NULL)+
   scale_x_continuous(breaks = seq(year_min, year_max, by = 1))+
@@ -214,11 +214,11 @@ plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x=
  }
  plot <- plot +
   geom_ribbon(aes(x = .data[[col_x]], ymin = `pred.lower`, ymax = `pred.upper`, fill = .data[[col_group]]), alpha = 0.4) +
-  geom_borderline(aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]]),size=line_size) +
-  geom_borderline(aes(x = .data[[col_x]], y = cantidad),size = line_size) +
+  geom_borderline(aes(x = .data[[col_x]], y = pred, group = .data[[col_group]], color = .data[[col_group]]),linewidth=line_size) +
+  geom_borderline(aes(x = .data[[col_x]], y = cantidad),linewidth = line_size) +
   geom_point(aes(x = .data[[col_x]], y = cantidad),size=point_size) +
   facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18)), ncol=facet_ncol) +
-  labs(x = "Año-Mes", y = "Fallecidos mensuales", caption = "Línea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ año + mes). Intervalo de confianza: 95%. Las líneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
+  labs(x = "A\u00f1o-Mes", y = "Fallecidos mensuales", caption = "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%. Las l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. An\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size=18) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
   scale_y_continuous(minor_breaks = NULL)+
@@ -238,7 +238,7 @@ plot_norm_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='ani
   geom_line(aes(group = .data[[col_group]], color = .data[[col_group]], y = pred_norm)) +
   geom_ribbon(aes(ymin = pred.lower_norm, ymax = pred.upper_norm, fill = .data[[col_group]]), alpha = 0.4) +
   facet_wrap(~ .data[[col_group]], labeller = labeller(.rows = label_wrap_gen(width = 18))) +
-  labs(x = 'Año', y = 'Fallecidos anuales (valor 2015=100)', color = "Jurisdiccion", fill = "Jurisdiccion", caption = "Línea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ año + mes). Intervalo de confianza: 95%. Las líneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
+  labs(x = 'A\u00f1o', y = 'Fallecidos anuales (valor 2015=100)', color = "Jurisdiccion", fill = "Jurisdiccion", caption = "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%. Las l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. An\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size = 18) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
   scale_y_continuous(minor_breaks = NULL)+
@@ -260,7 +260,7 @@ plot_abs_excess <- function(dataframe, fname, col_group='jurisdiccion',col_x='an
   geom_line(data = dataframe , aes(x = .data[[col_x]], y = exceso)) +
   geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `exceso.lower`, ymax = `exceso.upper`, fill = grupo_causa_defuncion_CIE10), alpha = 0.4) +
   facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
-  labs(x = "Año", y = "Exceso de fallecidos", caption = "Línea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ año + mes). Intervalo de confianza: 95%. Las líneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. Análisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
+  labs(x = "A\u00f1o", y = "Exceso de fallecidos", caption = "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%. Las l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.\nDatos del Ministerio de Salud Argentina - DEIS. An\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA") +
   theme_bw(base_size=18) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
   scale_y_continuous(minor_breaks = NULL)+

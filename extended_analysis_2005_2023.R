@@ -5,7 +5,7 @@
 
 library(pacman)
 p_load(httr,readxl,dplyr,ggplot2,scales,ggrepel,viridis,padr,gganimate,wesanderson,readr,forcats,kableExtra,tidyr,mgcv,MASS,lubridate,ggborderline)
-Sys.setlocale("LC_ALL","English")
+Sys.setlocale("LC_ALL","Spanish")
 
 # Import custom functions
 source("funciones_analisis.R")
@@ -29,11 +29,13 @@ for(i in seq_along(defweb_files)) {
 
   # Determine separator: semicolon for 2020 onwards, comma for earlier
   sep_char <- if(year >= 2020) ";" else ","
+  # Encoding differs by year: UTF-8 for 2020+, windows-1252 for earlier files
+  file_encoding <- if(year >= 2020) "UTF-8" else "windows-1252"
 
   # Read from zip file directly without extraction
   temp_data <- read_delim(unz("defweb05-23.zip", defweb_files[i]),
                           delim = sep_char,
-                          locale = readr::locale(encoding = "latin1"),
+                          locale = readr::locale(encoding = file_encoding),
                           col_types = cols(
                             PROVRES = col_character(),
                             SEXO = col_character(),
