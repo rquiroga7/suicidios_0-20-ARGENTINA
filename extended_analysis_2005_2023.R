@@ -5,7 +5,7 @@
 
 library(pacman)
 p_load(httr,readxl,dplyr,ggplot2,scales,ggrepel,viridis,padr,gganimate,wesanderson,readr,forcats,kableExtra,tidyr,mgcv,MASS,lubridate,ggborderline)
-Sys.setlocale("LC_ALL","Spanish")
+
 
 # Import custom functions
 source("funciones_analisis.R")
@@ -247,3 +247,20 @@ increasing_causes <- datamort_05_23_causas %>%
   group_by(CAUSA) %>%
   summarise(trend = cor(anio_def, total), ratio = last(total) / first(total), .groups="drop", muertes_2023 = last(total)) %>%
   filter(ratio > 1.5 & trend > 0.5 & muertes_2023 >= 1000)
+
+
+#Create a plot of deaths by COVID (CAUSA U07) from 2020-2023, with one line per age group, with log scale, do not plot zero deaths
+covid_data <- datamort_05_23 %>%
+  filter(anio >= 2020 & CAUSA == "U07") %>%
+  group_by(anio, grupo_etario) %>%
+  summarise(total = sum(CUENTA, na.rm=TRUE), .groups="drop")
+
+# Create the plot
+ggplot(covid_data, aes(x = anio, y = total, color = grupo_etario)) +
+  geom_line() +
+  scale_y_log10() +
+  labs(title = "Muertes por COVID (CAUSA U07) 2020-2023",
+       x = "Año",
+       y = "Total de Muertes (escala logarítmica)",
+       color = "Grupo Etario") +
+  theme_minimal()
