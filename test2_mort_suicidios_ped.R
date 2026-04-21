@@ -1,9 +1,9 @@
 # Mortality Trend Analysis Script
 # Author: Rodrigo Quiroga
-# Repository: github.com/rquiroga7/suicidios_0-20-ARGENTINA
+# Repository: github.com/rquiroga7/suicidios_0-19-ARGENTINA
 
 # Robust package installation / loading: install missing packages then require()
-required_pkgs <- c("httr","readxl","dplyr","ggplot2","scales","ggrepel","viridis","padr","gganimate","wesanderson","readr","forcats","kableExtra","tidyr","mgcv","MASS","lubridate","ggborderline")
+required_pkgs <- c("httr","readxl","dplyr","ggplot2","scales","ggrepel","viridis","padr","gganimate","wesanderson","readr","forcats","kableExtra","tidyr","mgcv","MASS","lubridate","ggborderline","ragg")
 installed_pkgs <- rownames(installed.packages())
 to_install <- setdiff(required_pkgs, installed_pkgs)
 if(length(to_install) > 0) {
@@ -229,7 +229,7 @@ for (i in seq_along(etario_levels)) {
 }
 
 ## Annual suicide counts for selected jurisdictions (Córdoba, Santa Fe, CABA)
-# select suicides in 0-20 age group and map jurisdiction names to canonical labels
+# select suicides in 0-19 age group and map jurisdiction names to canonical labels
 cantidad_anual_jurisd <- datamort_15_24 %>%
   filter(grupo_etario == etario_levels[1] & grupo_causa_defuncion_CIE10 == "SUICIDIO") %>%
   mutate(jurisd_simple = case_when(
@@ -264,7 +264,7 @@ ggplot(cantidad_anual_jurisd, aes(x = anio_def, y = cantidad, color = jurisd_sim
         plot.caption = element_text(size = 12, hjust = 0),
         legend.position = "bottom")
 
-ggsave("plots/0-19_suicidios_anuales_CORDOBA_SF_CABA.png", dpi = 400, width = 18, height = 10)
+ggplot2::ggsave("plots/0-19_suicidios_anuales_CORDOBA_SF_CABA.png", device = ragg::agg_png, dpi = 400, width = 18, height = 10)
 
 ## Also create the same multi-jurisdiction annual plot for the 20-39 age group
 if (length(etario_levels) >= 2) {
@@ -302,6 +302,6 @@ if (length(etario_levels) >= 2) {
             plot.caption = element_text(size = 12, hjust = 0),
             legend.position = "bottom")
 
-    ggsave(paste0("plots/", gsub("-", "_", edad2), "_suicidios_anuales_CORDOBA_SF_CABA.png"), dpi = 400, width = 18, height = 10)
+    ggplot2::ggsave(paste0("plots/", gsub("-", "_", edad2), "_suicidios_anuales_CORDOBA_SF_CABA.png"), device = ragg::agg_png, dpi = 400, width = 18, height = 10)
   }
 }

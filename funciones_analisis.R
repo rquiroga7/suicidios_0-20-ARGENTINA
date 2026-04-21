@@ -163,7 +163,7 @@ peaks_layers <- function(peaks) {
       geom_vline(xintercept = as.numeric(as.Date("2021-05-01")), color = "red", alpha = 0.6),
       geom_vline(xintercept = as.numeric(as.Date("2022-01-01")), color = "darkorange", alpha = 0.6),
       geom_vline(xintercept = as.numeric(as.Date("2022-12-01")), color = "darkorange", alpha = 0.6),
-      geom_vline(xintercept = as.numeric(as.Date("2024-02-01")), color = "darkorange", alpha = 0.6)
+      geom_vline(xintercept = as.numeric(as.Date("2024-03-01")), color = "darkorange", alpha = 0.6)
     ))
   } else {
     return(NULL)
@@ -188,24 +188,24 @@ plot_abs_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
     scale_y_continuous(minor_breaks = NULL)+
     ggtitle(title)
- if (is.Date(dataframe[[col_x]])) {
-  data_min_raw <- suppressWarnings(min(dataframe[[col_x]], na.rm = TRUE))
-  data_max_raw <- suppressWarnings(max(dataframe[[col_x]], na.rm = TRUE))
-  if (is.na(data_min_raw)) data_min_raw <- as.Date("2015-01-01")
-  if (is.na(data_max_raw)) data_max_raw <- data_min_raw
-  # floor min to first of month, floor max to first of month then add one month
-  min_month <- as.Date(paste0(format(data_min_raw, "%Y-%m"), "-01"))
-  max_month <- as.Date(paste0(format(data_max_raw, "%Y-%m"), "-01"))
-  max_next_month <- seq(max_month, by = "month", length.out = 2)[2]
-  # create Jan-1 breaks from start year to end year+1
-  start_year <- as.integer(format(min_month, "%Y"))
-  end_year_next <- as.integer(format(max_month, "%Y")) + 1
-  jan_breaks <- as.Date(paste0(seq(start_year, end_year_next), "-01-01"))
-  plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%Y", limits = c(min_month, max_next_month), expand = c(0,0))
- } else {
-  plot <- plot + scale_x_continuous(minor_breaks = NULL, breaks = seq(2015, 2021, by = 1))
- }
- ggsave(fname, plot, dpi = 400, width = 18, height = 10)
+  if (is.Date(dataframe[[col_x]])){
+    data_min_raw <- suppressWarnings(min(dataframe[[col_x]], na.rm = TRUE))
+    data_max_raw <- suppressWarnings(max(dataframe[[col_x]], na.rm = TRUE))
+    if (is.na(data_min_raw)) data_min_raw <- as.Date("2015-01-01")
+    if (is.na(data_max_raw)) data_max_raw <- data_min_raw
+    # floor min to first of month, floor max to first of month then add one month
+    min_month <- as.Date(paste0(format(data_min_raw, "%Y-%m"), "-01"))
+    max_month <- as.Date(paste0(format(data_max_raw, "%Y-%m"), "-01"))
+    max_next_month <- seq(max_month, by = "month", length.out = 2)[2]
+    # create Jan-1 breaks from start year to end year+1
+    start_year <- as.integer(format(min_month, "%Y"))
+    end_year_next <- as.integer(format(max_month, "%Y")) + 1
+    jan_breaks <- as.Date(paste0(seq(start_year, end_year_next), "-01-01"))
+    plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%Y-%m", limits = c(min_month, max_next_month), expand = c(0,0))
+  } else {
+    plot <- plot + scale_x_continuous(minor_breaks = NULL, breaks = seq(2015, 2021, by = 1))
+  }
+ ggplot2::ggsave(fname, plot = plot, device = ragg::agg_png, dpi = 400, width = 18, height = 10)
  return(plot)
 }
 
@@ -249,7 +249,7 @@ plot_annual_simple <- function(dataframe, fname, col_group='grupo_causa_defuncio
   plot <- plot + scale_color_manual(values = manual_colors, name = "Sexo")
  }
  
- ggsave(fname, plot, dpi = 400, width = 18, height = 10)
+  ggplot2::ggsave(fname, plot = plot, device = ragg::agg_png, dpi = 400, width = 18, height = 10)
  return(plot)
 }
 
@@ -282,11 +282,11 @@ plot_abs_data_line <- function(dataframe, fname, col_group='jurisdiccion',col_x=
   start_year <- as.integer(format(min_month, "%Y"))
   end_year_next <- as.integer(format(max_month, "%Y")) + 1
   jan_breaks <- as.Date(paste0(seq(start_year, end_year_next), "-01-01"))
-  plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%m-%Y", limits = c(min_month, max_next_month), expand = c(0,0))
+  plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%Y-%m", limits = c(min_month, max_next_month), expand = c(0,0))
  } else {
   plot <- plot + scale_x_continuous(minor_breaks = NULL, breaks = seq(2015, 2023, by = 1))
  }
- ggsave(fname, plot, dpi = 400, width = 18, height = 10)
+ ggsave(fname, plot = plot, device = ragg::agg_png, dpi = 400, width = 18, height = 10)
  return(plot)
 }
 
@@ -308,7 +308,11 @@ plot_excess_monthly <- function(dataframe, fname, col_group='grupo_causa_defunci
     geom_line(data = df %>% group_by(.data[[col_group]]) %>% arrange(.data[[col_x]]) %>% mutate(exceso_ma = as.numeric(stats::filter(exceso, rep(1/3,3), sides = 2))) %>% ungroup(),
               aes(x = .data[[col_x]], y = exceso_ma, color = .data[[col_group]], group = .data[[col_group]]), size = 0.9, na.rm = TRUE) +
     facet_wrap(~.data[[col_group]], scales = "free_y", ncol = facet_ncol, labeller = labeller(.rows = label_wrap_gen(width = 18))) +
-    labs(x = "Año-Mes", y = "Exceso de fallecidos (cantidad - esperado)", caption = "Exceso = Observados - Esperados (GAM entrenado 2015-2019). Datos: DEIS.") +
+    {
+      base_caption <- "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%.\nDatos del Ministerio de Salud Argentina - DEIS.\nAn\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA"
+      caption_text <- if(tolower(peaks) == "yes") paste0(base_caption, "\nLas l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.\nExceso = Observados - Esperados (GAM entrenado 2015-2019).") else paste0(base_caption, "\nExceso = Observados - Esperados (GAM entrenado 2015-2019).")
+      labs(x = "A\u00f1o-Mes", y = "Exceso de fallecidos (cantidad - esperado)", caption = caption_text)
+    } +
     theme_bw(base_size = 18) +
     theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position = "none", strip.text = element_text(size = 14), plot.title = element_text(vjust=0.5,hjust=0.5), plot.caption = element_text(size=12,hjust=0)) +
     scale_y_continuous(minor_breaks = NULL)
@@ -324,7 +328,7 @@ plot_excess_monthly <- function(dataframe, fname, col_group='grupo_causa_defunci
     start_year <- as.integer(format(min_month, "%Y"))
     end_year_next <- as.integer(format(max_month, "%Y")) + 1
     jan_breaks <- as.Date(paste0(seq(start_year, end_year_next), "-01-01"))
-    plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%m-%Y", limits = c(min_month, max_next_month), expand = c(0,0))
+    plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%Y-%m", limits = c(min_month, max_next_month), expand = c(0,0))
   }
   # continuous x (years) handling when not date
   if (!is.Date(df[[col_x]])) {
@@ -332,8 +336,9 @@ plot_excess_monthly <- function(dataframe, fname, col_group='grupo_causa_defunci
     if (any(is.infinite(yrs))) yrs <- c(2015, 2023)
     plot <- plot + scale_x_continuous(minor_breaks = NULL, breaks = seq(yrs[1], yrs[2], by = 1))
   }
-
-  ggplot2::ggsave(fname, plot, dpi = 400, width = 18, height = 10)
+  # set provided title
+  plot <- plot + ggtitle(title)
+  ggplot2::ggsave(fname, plot = plot, device = ragg::agg_png, dpi = 400, width = 18, height = 10)
   return(plot)
 }
 
@@ -370,35 +375,51 @@ plot_norm_data <- function(dataframe, fname, col_group='jurisdiccion',col_x='ani
  } else {
   plot <- plot + scale_x_continuous(minor_breaks = NULL, breaks = seq(2015, 2021, by = 1))
  }
- ggsave(fname, dpi = 400, width = 18, height = 10)
+  ggplot2::ggsave(fname, plot = plot, device = ragg::agg_png, dpi = 400, width = 18, height = 10)
  return(plot)
 }
 
 plot_abs_excess <- function(dataframe, fname, col_group='jurisdiccion',col_x='anio_def',title='Titulo',peaks='NO'){
- plot <- ggplot()
- # add shared peaks lines behind other layers when requested
- plot <- plot + peaks_layers(peaks) +
-  geom_hline(yintercept = 0, color = "black")+
-  geom_line(data = dataframe , aes(x = .data[[col_x]], y = exceso)) +
-  geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = `exceso.lower`, ymax = `exceso.upper`, fill = grupo_causa_defuncion_CIE10), alpha = 0.4) +
-  facet_wrap(~.data[[col_group]], scales="free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
-  {
-    base_caption <- "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%.\nDatos del Ministerio de Salud Argentina - DEIS.\nAn\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA"
-    caption_text <- if(tolower(peaks) == "yes") paste0(base_caption, "\nLas l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.") else base_caption
-    labs(x = "A\u00f1o", y = "Exceso de fallecidos", caption = caption_text)
-  } +
-  theme_bw(base_size=18) +
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),legend.position = "none", strip.text = element_text(size = 14),plot.title=element_text(vjust=0.5,hjust=0.5),plot.caption=element_text(size=12,hjust=0))+
-  scale_y_continuous(minor_breaks = NULL)+
-  ggtitle(title)
-  # peaks are handled by peaks_layers() earlier; no-op here
- if(is.Date(dataframe[[col_x]])){
-  plot <- plot + scale_x_date(minor_breaks = NULL,date_breaks = "1 year", date_labels = "%m-%Y", limits = c(as.Date("2015-01-01"), as.Date("2022-01-01")), expand = c(0,0))
- } else {
-  plot <- plot + scale_x_continuous(minor_breaks = NULL,breaks = seq(2015, 2021, by = 1))
- }
- ggsave(fname, plot, dpi = 400, width = 18, height = 10)
- return(plot)
+  # ensure exceso columns exist
+  if(!"exceso" %in% names(dataframe)){
+    dataframe <- dataframe %>% mutate(exceso = as.numeric(cantidad) - as.numeric(pred),
+                                      exceso.lower = as.numeric(cantidad) - as.numeric(pred.upper),
+                                      exceso.upper = as.numeric(cantidad) - as.numeric(pred.lower))
+  }
+
+  base_caption <- "L\u00ednea de tendencia: Modelo Aditivo Generalizado (GAM) calculado con datos de 2015-2019 (cantidad ~ a\u00f1o + mes). Intervalo de confianza: 95%.\nDatos del Ministerio de Salud Argentina - DEIS.\nAn\u00e1lisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA"
+  caption_text <- if(tolower(peaks) == "yes") paste0(base_caption, "\nLas l\u00edneas rojas verticales corresponden a las tres principales olas de COVID-19.\nExceso = Observados - Esperados (GAM entrenado 2015-2019).") else paste0(base_caption, "\nExceso = Observados - Esperados (GAM entrenado 2015-2019).")
+
+  plot <- ggplot() +
+    peaks_layers(peaks) +
+    geom_hline(yintercept = 0, color = "black") +
+    geom_ribbon(data = dataframe, aes(x = .data[[col_x]], ymin = exceso.lower, ymax = exceso.upper, fill = .data[[col_group]]), alpha = 0.4) +
+    geom_col(data = dataframe, aes(x = .data[[col_x]], y = exceso, fill = .data[[col_group]]), position = 'identity', alpha = 0.8) +
+    facet_wrap(~.data[[col_group]], scales = "free_y", labeller = labeller(.rows = label_wrap_gen(width = 18))) +
+    labs(x = "A\u00f1o-Mes", y = "Exceso de fallecidos", caption = caption_text) +
+    theme_bw(base_size=18) +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position = "none", strip.text = element_text(size = 14), plot.title = element_text(vjust=0.5,hjust=0.5), plot.caption = element_text(size=12,hjust=0)) +
+    scale_y_continuous(minor_breaks = NULL) +
+    ggtitle(title)
+
+  if(is.Date(dataframe[[col_x]])){
+    data_min_raw <- suppressWarnings(min(dataframe[[col_x]], na.rm = TRUE))
+    data_max_raw <- suppressWarnings(max(dataframe[[col_x]], na.rm = TRUE))
+    if (is.na(data_min_raw)) data_min_raw <- as.Date("2015-01-01")
+    if (is.na(data_max_raw)) data_max_raw <- data_min_raw
+    min_month <- as.Date(paste0(format(data_min_raw, "%Y-%m"), "-01"))
+    max_month <- as.Date(paste0(format(data_max_raw, "%Y-%m"), "-01"))
+    max_next_month <- seq(max_month, by = "month", length.out = 2)[2]
+    start_year <- as.integer(format(min_month, "%Y"))
+    end_year_next <- as.integer(format(max_month, "%Y")) + 1
+    jan_breaks <- as.Date(paste0(seq(start_year, end_year_next), "-01-01"))
+    plot <- plot + scale_x_date(minor_breaks = NULL, breaks = jan_breaks, date_labels = "%Y-%m", limits = c(min_month, max_next_month), expand = c(0,0))
+  } else {
+    plot <- plot + scale_x_continuous(minor_breaks = NULL, breaks = seq(2015, 2021, by = 1))
+  }
+
+  ggplot2::ggsave(fname, plot = plot, device = ragg::agg_png, dpi = 400, width = 18, height = 10)
+  return(plot)
 }
 
 ###TABLE CREATION FUNCTIONS###
