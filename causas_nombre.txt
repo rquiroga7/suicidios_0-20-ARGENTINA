@@ -1588,7 +1588,7 @@ T98,Secuelas de otros efectos y los no especificados de causas externas
 U04,Síndrome respiratorio agudo grave [SRAG]
 U06,#N/D
 U06,Enfermedad por virus Zika
-U07,#N/D
+U07,COVID-19
 U82,Resistencia a antibioticos betalactamicos
 U82,Resistencia a antibióticos betalactámicos
 U83,Resistencia a otros antibioticos

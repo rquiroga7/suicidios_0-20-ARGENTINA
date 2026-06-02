@@ -1,0 +1,1121 @@
+"age","anio_def","cause","method","cor","p.value","n"
+"01.menor a 20 anios",2015,"covid","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"covid","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"covid","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"covid","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"covid","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"covid","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"covid","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"covid","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"covid","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"covid","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"covid","pearson",1,1.32831694084709e-79,12
+"01.menor a 20 anios",2020,"covid","spearman",1,0,12
+"01.menor a 20 anios",2021,"covid","pearson",1,0,12
+"01.menor a 20 anios",2021,"covid","spearman",1,0,12
+"01.menor a 20 anios",2022,"covid","pearson",1,1.32831694084709e-79,12
+"01.menor a 20 anios",2022,"covid","spearman",1,0,12
+"01.menor a 20 anios",2023,"covid","pearson",1,0,12
+"01.menor a 20 anios",2023,"covid","spearman",1,0,12
+"01.menor a 20 anios",2024,"covid","pearson",1,1.32831694084709e-79,12
+"01.menor a 20 anios",2024,"covid","spearman",1,0,12
+"01.menor a 20 anios",2015,"resp","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"resp","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"resp","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"resp","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"resp","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"resp","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"resp","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"resp","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"resp","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"resp","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"resp","pearson",-0.400464864414516,0.197048258331506,12
+"01.menor a 20 anios",2020,"resp","spearman",-0.570436680315239,0.052774096020423,12
+"01.menor a 20 anios",2021,"resp","pearson",-0.858852878854377,0.000346426049794201,12
+"01.menor a 20 anios",2021,"resp","spearman",-0.603198056923566,0.0378582447990736,12
+"01.menor a 20 anios",2022,"resp","pearson",0.0611927905967873,0.850157702939209,12
+"01.menor a 20 anios",2022,"resp","spearman",-0.213660572843196,0.50491268758604,12
+"01.menor a 20 anios",2023,"resp","pearson",0.203152725764197,0.526562949066026,12
+"01.menor a 20 anios",2023,"resp","spearman",0.0554355371239765,0.864134054150763,12
+"01.menor a 20 anios",2024,"resp","pearson",0.592520586263323,0.0423384220122109,12
+"01.menor a 20 anios",2024,"resp","spearman",0.605736138571191,0.0368451186939304,12
+"01.menor a 20 anios",2015,"circ","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"circ","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"circ","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"circ","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"circ","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"circ","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"circ","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"circ","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"circ","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"circ","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"circ","pearson",0.410628984109878,0.184857652030053,12
+"01.menor a 20 anios",2020,"circ","spearman",0.345078979449959,0.271964979807583,12
+"01.menor a 20 anios",2021,"circ","pearson",0.167394867302745,0.603059661823203,12
+"01.menor a 20 anios",2021,"circ","spearman",0.155208856752263,0.630046176881383,12
+"01.menor a 20 anios",2022,"circ","pearson",-0.278961385268053,0.379918088056822,12
+"01.menor a 20 anios",2022,"circ","spearman",-0.301226381385489,0.341372294714219,12
+"01.menor a 20 anios",2023,"circ","pearson",-0.158987516066984,0.621631734734947,12
+"01.menor a 20 anios",2023,"circ","spearman",-0.0443484296991812,0.891146983072846,12
+"01.menor a 20 anios",2024,"circ","pearson",0.0881546000328015,0.785289260989926,12
+"01.menor a 20 anios",2024,"circ","spearman",-0.00786670309832715,0.980642132669409,12
+"01.menor a 20 anios",2015,"diabetes","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"diabetes","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"diabetes","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"diabetes","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"diabetes","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"diabetes","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"diabetes","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"diabetes","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"diabetes","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"diabetes","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"diabetes","pearson",0.345386920791409,0.271508831751474,12
+"01.menor a 20 anios",2020,"diabetes","spearman",0.0563394252163199,0.8619373037131,12
+"01.menor a 20 anios",2021,"diabetes","pearson",0.149666803848516,0.642460516716657,12
+"01.menor a 20 anios",2021,"diabetes","spearman",0.109351694530003,0.735136979997336,12
+"01.menor a 20 anios",2022,"diabetes","pearson",0.517481780773735,0.0848692922618463,12
+"01.menor a 20 anios",2022,"diabetes","spearman",0.770579115172181,0.00335517862393755,12
+"01.menor a 20 anios",2023,"diabetes","pearson",-0.0884036317725758,0.784695291591431,12
+"01.menor a 20 anios",2023,"diabetes","spearman",-0.243916363345497,0.444875800172021,12
+"01.menor a 20 anios",2024,"diabetes","pearson",-0.307341219569144,0.331169947390714,12
+"01.menor a 20 anios",2024,"diabetes","spearman",-0.149467358868216,0.642908870888902,12
+"01.menor a 20 anios",2015,"alzheimer","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"alzheimer","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"alzheimer","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"alzheimer","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"alzheimer","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"alzheimer","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"alzheimer","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"alzheimer","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"alzheimer","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"alzheimer","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"alzheimer","pearson",-0.592881213078444,0.0421812593522803,12
+"01.menor a 20 anios",2020,"alzheimer","spearman",-0.690157958899919,0.0129864256750895,12
+"01.menor a 20 anios",2021,"alzheimer","pearson",-0.488750672939191,0.106878668565753,12
+"01.menor a 20 anios",2021,"alzheimer","spearman",-0.402132037949044,0.195015688108231,12
+"01.menor a 20 anios",2022,"alzheimer","pearson",0.74394364540643,0.00553368831284738,12
+"01.menor a 20 anios",2022,"alzheimer","spearman",0.287215852018722,0.3653744519387,12
+"01.menor a 20 anios",2023,"alzheimer","pearson",0.330789809246233,0.293614257801706,12
+"01.menor a 20 anios",2023,"alzheimer","spearman",-0.170002313846861,0.597342778730405,12
+"01.menor a 20 anios",2024,"alzheimer","pearson",0.612900843890873,0.0340896949087712,12
+"01.menor a 20 anios",2024,"alzheimer","spearman",0.605736138571191,0.0368451186939304,12
+"01.menor a 20 anios",2015,"metabolic","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"metabolic","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"metabolic","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"metabolic","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"metabolic","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"metabolic","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"metabolic","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"metabolic","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"metabolic","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"metabolic","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"metabolic","pearson",-0.0262662719054933,0.935419770904869,12
+"01.menor a 20 anios",2020,"metabolic","spearman",-0.16197584749692,0.615006487406935,12
+"01.menor a 20 anios",2021,"metabolic","pearson",-0.391636959588597,0.208027342827081,12
+"01.menor a 20 anios",2021,"metabolic","spearman",-0.437406778120013,0.155030414639254,12
+"01.menor a 20 anios",2022,"metabolic","pearson",0.0473552504424469,0.883809438464044,12
+"01.menor a 20 anios",2022,"metabolic","spearman",-0.143607926009361,0.656129207444872,12
+"01.menor a 20 anios",2023,"metabolic","pearson",-0.164106234993371,0.610299365617695,12
+"01.menor a 20 anios",2023,"metabolic","spearman",0.0443484296991812,0.891146983072846,12
+"01.menor a 20 anios",2024,"metabolic","pearson",0.15738262256111,0.625200556222796,12
+"01.menor a 20 anios",2024,"metabolic","spearman",0.0393335154916358,0.903402075693968,12
+"01.menor a 20 anios",2015,"anemia","pearson",NA,NA,12
+"01.menor a 20 anios",2015,"anemia","spearman",NA,NA,12
+"01.menor a 20 anios",2016,"anemia","pearson",NA,NA,12
+"01.menor a 20 anios",2016,"anemia","spearman",NA,NA,12
+"01.menor a 20 anios",2017,"anemia","pearson",NA,NA,12
+"01.menor a 20 anios",2017,"anemia","spearman",NA,NA,12
+"01.menor a 20 anios",2018,"anemia","pearson",NA,NA,12
+"01.menor a 20 anios",2018,"anemia","spearman",NA,NA,12
+"01.menor a 20 anios",2019,"anemia","pearson",NA,NA,12
+"01.menor a 20 anios",2019,"anemia","spearman",NA,NA,12
+"01.menor a 20 anios",2020,"anemia","pearson",0.376918693243976,0.227143074253346,12
+"01.menor a 20 anios",2020,"anemia","spearman",0.316909266841799,0.315543603616405,12
+"01.menor a 20 anios",2021,"anemia","pearson",-0.101014950455032,0.754759787016252,12
+"01.menor a 20 anios",2021,"anemia","spearman",-0.116406642564197,0.718643555649438,12
+"01.menor a 20 anios",2022,"anemia","pearson",0.474681673844161,0.118921395247804,12
+"01.menor a 20 anios",2022,"anemia","spearman",0.052539485125376,0.871178309361983,12
+"01.menor a 20 anios",2023,"anemia","pearson",-0.179872483716922,0.575893142230425,12
+"01.menor a 20 anios",2023,"anemia","spearman",0.155219503947134,0.630022409994826,12
+"01.menor a 20 anios",2024,"anemia","pearson",0.289688889181351,0.36107493002452,12
+"01.menor a 20 anios",2024,"anemia","spearman",0.464135482801302,0.128511464988983,12
+"02.de 20 a 39 anios",2015,"covid","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"covid","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"covid","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"covid","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"covid","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"covid","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"covid","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"covid","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"covid","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"covid","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"covid","pearson",1,4.25061421071047e-78,12
+"02.de 20 a 39 anios",2020,"covid","spearman",1,0,12
+"02.de 20 a 39 anios",2021,"covid","pearson",1,0,12
+"02.de 20 a 39 anios",2021,"covid","spearman",1,0,12
+"02.de 20 a 39 anios",2022,"covid","pearson",1,0,12
+"02.de 20 a 39 anios",2022,"covid","spearman",1,0,12
+"02.de 20 a 39 anios",2023,"covid","pearson",1,0,12
+"02.de 20 a 39 anios",2023,"covid","spearman",1,1.32831694084709e-79,12
+"02.de 20 a 39 anios",2024,"covid","pearson",1,1.32831694084709e-79,12
+"02.de 20 a 39 anios",2024,"covid","spearman",1,0,12
+"02.de 20 a 39 anios",2015,"resp","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"resp","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"resp","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"resp","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"resp","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"resp","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"resp","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"resp","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"resp","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"resp","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"resp","pearson",-0.0533187654067831,0.869281949894108,12
+"02.de 20 a 39 anios",2020,"resp","spearman",-0.269702690310263,0.396580033147263,12
+"02.de 20 a 39 anios",2021,"resp","pearson",0.695630058696189,0.0120024945952581,12
+"02.de 20 a 39 anios",2021,"resp","spearman",0.699300699300699,0.0145393118705073,12
+"02.de 20 a 39 anios",2022,"resp","pearson",0.282608418223837,0.373455905305442,12
+"02.de 20 a 39 anios",2022,"resp","spearman",0.20315267581812,0.526563052910977,12
+"02.de 20 a 39 anios",2023,"resp","pearson",0.629693910738206,0.0282140054263901,12
+"02.de 20 a 39 anios",2023,"resp","spearman",0.328782616422109,0.296730780099507,12
+"02.de 20 a 39 anios",2024,"resp","pearson",0.333386432500644,0.289610039581147,12
+"02.de 20 a 39 anios",2024,"resp","spearman",0.234488222443838,0.463205847368091,12
+"02.de 20 a 39 anios",2015,"circ","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"circ","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"circ","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"circ","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"circ","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"circ","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"circ","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"circ","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"circ","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"circ","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"circ","pearson",0.0961964551788024,0.766163215634068,12
+"02.de 20 a 39 anios",2020,"circ","spearman",-0.105078970250752,0.745176621912518,12
+"02.de 20 a 39 anios",2021,"circ","pearson",0.501548191871799,0.0966540771660667,12
+"02.de 20 a 39 anios",2021,"circ","spearman",0.503496503496504,0.0987515700723274,12
+"02.de 20 a 39 anios",2022,"circ","pearson",-0.10550653920378,0.74417029327608,12
+"02.de 20 a 39 anios",2022,"circ","spearman",-0.609458027454361,0.0353946454668789,12
+"02.de 20 a 39 anios",2023,"circ","pearson",-0.596554067008383,0.0406040943237691,12
+"02.de 20 a 39 anios",2023,"circ","spearman",-0.577196148829925,0.0494071552650681,12
+"02.de 20 a 39 anios",2024,"circ","pearson",-0.00498161902282758,0.987740952576365,12
+"02.de 20 a 39 anios",2024,"circ","spearman",0.166984037194854,0.603962298781814,12
+"02.de 20 a 39 anios",2015,"diabetes","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"diabetes","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"diabetes","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"diabetes","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"diabetes","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"diabetes","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"diabetes","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"diabetes","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"diabetes","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"diabetes","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"diabetes","pearson",0.337164385799103,0.283839625278792,12
+"02.de 20 a 39 anios",2020,"diabetes","spearman",0.115586867275827,0.72055456354042,12
+"02.de 20 a 39 anios",2021,"diabetes","pearson",0.379230434198795,0.224073459338491,12
+"02.de 20 a 39 anios",2021,"diabetes","spearman",0.433566433566434,0.161446426349823,12
+"02.de 20 a 39 anios",2022,"diabetes","pearson",0.769385252474759,0.00343589847860454,12
+"02.de 20 a 39 anios",2022,"diabetes","spearman",0.171628984742895,0.59378680601684,12
+"02.de 20 a 39 anios",2023,"diabetes","pearson",-0.243752509814486,0.445191354595915,12
+"02.de 20 a 39 anios",2023,"diabetes","spearman",-0.789078279413062,0.00227906603131314,12
+"02.de 20 a 39 anios",2024,"diabetes","pearson",-0.339101541014726,0.280906403158386,12
+"02.de 20 a 39 anios",2024,"diabetes","spearman",-0.21672396316779,0.498676272785028,12
+"02.de 20 a 39 anios",2015,"alzheimer","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"alzheimer","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"alzheimer","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"alzheimer","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"alzheimer","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"alzheimer","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"alzheimer","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"alzheimer","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"alzheimer","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"alzheimer","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"alzheimer","pearson",0.215929680279567,0.500289950456023,12
+"02.de 20 a 39 anios",2020,"alzheimer","spearman",0.858144923714474,0.000354759007349312,12
+"02.de 20 a 39 anios",2021,"alzheimer","pearson",0.018590220305104,0.954271704245577,12
+"02.de 20 a 39 anios",2021,"alzheimer","spearman",-0.356643356643357,0.256012537309024,12
+"02.de 20 a 39 anios",2022,"alzheimer","pearson",-0.212113637948896,0.508074979699378,12
+"02.de 20 a 39 anios",2022,"alzheimer","spearman",-0.469352733786692,0.123706328208118,12
+"02.de 20 a 39 anios",2023,"alzheimer","pearson",-0.295400787233873,0.351247116302114,12
+"02.de 20 a 39 anios",2023,"alzheimer","spearman",-0.818303400872805,0.00113953607448448,12
+"02.de 20 a 39 anios",2024,"alzheimer","pearson",-0.311914919708088,0.323648672635332,12
+"02.de 20 a 39 anios",2024,"alzheimer","spearman",-0.64306618579295,0.0240876414471236,12
+"02.de 20 a 39 anios",2015,"metabolic","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"metabolic","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"metabolic","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"metabolic","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"metabolic","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"metabolic","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"metabolic","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"metabolic","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"metabolic","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"metabolic","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"metabolic","pearson",-0.28846494673976,0.363199481509173,12
+"02.de 20 a 39 anios",2020,"metabolic","spearman",-0.273205322651955,0.390233673923637,12
+"02.de 20 a 39 anios",2021,"metabolic","pearson",0.514954428685818,0.0866698745686842,12
+"02.de 20 a 39 anios",2021,"metabolic","spearman",0.433566433566434,0.161446426349823,12
+"02.de 20 a 39 anios",2022,"metabolic","pearson",0.0522036799388991,0.871995675646937,12
+"02.de 20 a 39 anios",2022,"metabolic","spearman",0.18213688176797,0.571015781266849,12
+"02.de 20 a 39 anios",2023,"metabolic","pearson",-0.225301272398753,0.481400153061406,12
+"02.de 20 a 39 anios",2023,"metabolic","spearman",-0.0438376821896145,0.892394154348614,12
+"02.de 20 a 39 anios",2024,"metabolic","pearson",0.230940329030083,0.470193769510285,12
+"02.de 20 a 39 anios",2024,"metabolic","spearman",0.0355285185520967,0.912713522809934,12
+"02.de 20 a 39 anios",2015,"anemia","pearson",NA,NA,12
+"02.de 20 a 39 anios",2015,"anemia","spearman",NA,NA,12
+"02.de 20 a 39 anios",2016,"anemia","pearson",NA,NA,12
+"02.de 20 a 39 anios",2016,"anemia","spearman",NA,NA,12
+"02.de 20 a 39 anios",2017,"anemia","pearson",NA,NA,12
+"02.de 20 a 39 anios",2017,"anemia","spearman",NA,NA,12
+"02.de 20 a 39 anios",2018,"anemia","pearson",NA,NA,12
+"02.de 20 a 39 anios",2018,"anemia","spearman",NA,NA,12
+"02.de 20 a 39 anios",2019,"anemia","pearson",NA,NA,12
+"02.de 20 a 39 anios",2019,"anemia","spearman",NA,NA,12
+"02.de 20 a 39 anios",2020,"anemia","pearson",0.876692431857791,0.000181882804365501,12
+"02.de 20 a 39 anios",2020,"anemia","spearman",0.781087012197256,0.00270529564613969,12
+"02.de 20 a 39 anios",2021,"anemia","pearson",0.465224095165984,0.127498955022478,12
+"02.de 20 a 39 anios",2021,"anemia","spearman",0.237762237762238,0.457102206809002,12
+"02.de 20 a 39 anios",2022,"anemia","pearson",-0.22382750511359,0.484348908398877,12
+"02.de 20 a 39 anios",2022,"anemia","spearman",-0.10157633790906,0.753434083780813,12
+"02.de 20 a 39 anios",2023,"anemia","pearson",-0.406920889998665,0.189249321338658,12
+"02.de 20 a 39 anios",2023,"anemia","spearman",-0.24110725204288,0.450300482874108,12
+"02.de 20 a 39 anios",2024,"anemia","pearson",0.106552532927121,0.741709987457858,12
+"02.de 20 a 39 anios",2024,"anemia","spearman",0.131455518642758,0.683834977221256,12
+"03.de 40 a 49 anios",2015,"covid","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"covid","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"covid","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"covid","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"covid","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"covid","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"covid","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"covid","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"covid","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"covid","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"covid","pearson",1,0,12
+"03.de 40 a 49 anios",2020,"covid","spearman",1,0,12
+"03.de 40 a 49 anios",2021,"covid","pearson",1,0,12
+"03.de 40 a 49 anios",2021,"covid","spearman",1,0,12
+"03.de 40 a 49 anios",2022,"covid","pearson",1,4.25061421071047e-78,12
+"03.de 40 a 49 anios",2022,"covid","spearman",1,0,12
+"03.de 40 a 49 anios",2023,"covid","pearson",1,0,12
+"03.de 40 a 49 anios",2023,"covid","spearman",1,0,12
+"03.de 40 a 49 anios",2024,"covid","pearson",1,0,12
+"03.de 40 a 49 anios",2024,"covid","spearman",1,0,12
+"03.de 40 a 49 anios",2015,"resp","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"resp","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"resp","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"resp","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"resp","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"resp","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"resp","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"resp","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"resp","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"resp","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"resp","pearson",0.0784212359634205,0.80858399412189,12
+"03.de 40 a 49 anios",2020,"resp","spearman",-0.0455342204419925,0.888252331652893,12
+"03.de 40 a 49 anios",2021,"resp","pearson",0.947063622752371,2.99442964315553e-06,12
+"03.de 40 a 49 anios",2021,"resp","spearman",0.923076923076923,0,12
+"03.de 40 a 49 anios",2022,"resp","pearson",0.529693633134774,0.0765263073379675,12
+"03.de 40 a 49 anios",2022,"resp","spearman",0.027972027972028,0.9386633634935,12
+"03.de 40 a 49 anios",2023,"resp","pearson",0.271168971083243,0.393916963842294,12
+"03.de 40 a 49 anios",2023,"resp","spearman",0.264091055701499,0.406855762668481,12
+"03.de 40 a 49 anios",2024,"resp","pearson",0.347598051509891,0.268246463854834,12
+"03.de 40 a 49 anios",2024,"resp","spearman",0.367058489524401,0.240516972379402,12
+"03.de 40 a 49 anios",2015,"circ","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"circ","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"circ","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"circ","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"circ","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"circ","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"circ","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"circ","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"circ","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"circ","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"circ","pearson",0.716884745725917,0.00869690224389154,12
+"03.de 40 a 49 anios",2020,"circ","spearman",0.633976453846203,0.0268409444196137,12
+"03.de 40 a 49 anios",2021,"circ","pearson",0.628724930943999,0.0285315746307078,12
+"03.de 40 a 49 anios",2021,"circ","spearman",0.741258741258741,0.0081706398158992,12
+"03.de 40 a 49 anios",2022,"circ","pearson",0.628569299083582,0.0285828199609578,12
+"03.de 40 a 49 anios",2022,"circ","spearman",0.00699300699300699,0.991230036057101,12
+"03.de 40 a 49 anios",2023,"circ","pearson",0.13839324244942,0.667971613740692,12
+"03.de 40 a 49 anios",2023,"circ","spearman",0.0809879237484598,0.80242653521426,12
+"03.de 40 a 49 anios",2024,"circ","pearson",0.373400448927321,0.231862785332977,12
+"03.de 40 a 49 anios",2024,"circ","spearman",0.41384045387555,0.181105779411043,12
+"03.de 40 a 49 anios",2015,"diabetes","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"diabetes","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"diabetes","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"diabetes","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"diabetes","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"diabetes","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"diabetes","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"diabetes","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"diabetes","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"diabetes","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"diabetes","pearson",0.871444723655803,0.000221974987765524,12
+"03.de 40 a 49 anios",2020,"diabetes","spearman",0.654992247896354,0.0207937091260825,12
+"03.de 40 a 49 anios",2021,"diabetes","pearson",0.59624827445662,0.0407337809753891,12
+"03.de 40 a 49 anios",2021,"diabetes","spearman",0.566433566433566,0.0590341482159041,12
+"03.de 40 a 49 anios",2022,"diabetes","pearson",0.767566736873027,0.00356167725029885,12
+"03.de 40 a 49 anios",2022,"diabetes","spearman",0.272727272727273,0.391232746026155,12
+"03.de 40 a 49 anios",2023,"diabetes","pearson",0.0358589692173094,0.911904440794128,12
+"03.de 40 a 49 anios",2023,"diabetes","spearman",0.13028492081274,0.686523400903651,12
+"03.de 40 a 49 anios",2024,"diabetes","pearson",0.577926650140569,0.0490525695125279,12
+"03.de 40 a 49 anios",2024,"diabetes","spearman",0.554186346928997,0.0615197655113868,12
+"03.de 40 a 49 anios",2015,"alzheimer","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"alzheimer","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"alzheimer","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"alzheimer","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"alzheimer","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"alzheimer","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"alzheimer","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"alzheimer","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"alzheimer","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"alzheimer","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"alzheimer","pearson",-0.14231714937164,0.6590538895834,12
+"03.de 40 a 49 anios",2020,"alzheimer","spearman",-0.486865895495151,0.108442821951915,12
+"03.de 40 a 49 anios",2021,"alzheimer","pearson",0.212351598076418,0.507587966634895,12
+"03.de 40 a 49 anios",2021,"alzheimer","spearman",0.503496503496504,0.0987515700723274,12
+"03.de 40 a 49 anios",2022,"alzheimer","pearson",-0.279996058078675,0.37807891306608,12
+"03.de 40 a 49 anios",2022,"alzheimer","spearman",0.0909090909090909,0.783196910294608,12
+"03.de 40 a 49 anios",2023,"alzheimer","pearson",-0.109847455012662,0.733974517319775,12
+"03.de 40 a 49 anios",2023,"alzheimer","spearman",0.316909266841799,0.315543603616405,12
+"03.de 40 a 49 anios",2024,"alzheimer","pearson",0.672557046543311,0.016557855676065,12
+"03.de 40 a 49 anios",2024,"alzheimer","spearman",0.651348888273692,0.0217627646764817,12
+"03.de 40 a 49 anios",2015,"metabolic","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"metabolic","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"metabolic","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"metabolic","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"metabolic","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"metabolic","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"metabolic","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"metabolic","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"metabolic","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"metabolic","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"metabolic","pearson",-0.353601895510004,0.259502966313426,12
+"03.de 40 a 49 anios",2020,"metabolic","spearman",-0.52539485125376,0.0793962329371459,12
+"03.de 40 a 49 anios",2021,"metabolic","pearson",-0.0824554623960978,0.798910531814392,12
+"03.de 40 a 49 anios",2021,"metabolic","spearman",-0.167832167832168,0.603727651288199,12
+"03.de 40 a 49 anios",2022,"metabolic","pearson",0.6451998870109,0.0234722713759294,12
+"03.de 40 a 49 anios",2022,"metabolic","spearman",0.356643356643357,0.256012537309024,12
+"03.de 40 a 49 anios",2023,"metabolic","pearson",0.369241548269571,0.237516727177793,12
+"03.de 40 a 49 anios",2023,"metabolic","spearman",0.0457757829882599,0.887662802266821,12
+"03.de 40 a 49 anios",2024,"metabolic","pearson",0.378806745409213,0.224634174678051,12
+"03.de 40 a 49 anios",2024,"metabolic","spearman",0.374255714809193,0.230710113624311,12
+"03.de 40 a 49 anios",2015,"anemia","pearson",NA,NA,12
+"03.de 40 a 49 anios",2015,"anemia","spearman",NA,NA,12
+"03.de 40 a 49 anios",2016,"anemia","pearson",NA,NA,12
+"03.de 40 a 49 anios",2016,"anemia","spearman",NA,NA,12
+"03.de 40 a 49 anios",2017,"anemia","pearson",NA,NA,12
+"03.de 40 a 49 anios",2017,"anemia","spearman",NA,NA,12
+"03.de 40 a 49 anios",2018,"anemia","pearson",NA,NA,12
+"03.de 40 a 49 anios",2018,"anemia","spearman",NA,NA,12
+"03.de 40 a 49 anios",2019,"anemia","pearson",NA,NA,12
+"03.de 40 a 49 anios",2019,"anemia","spearman",NA,NA,12
+"03.de 40 a 49 anios",2020,"anemia","pearson",0.00968386767589495,0.976171586431255,12
+"03.de 40 a 49 anios",2020,"anemia","spearman",0.0595447498087594,0.854154624623348,12
+"03.de 40 a 49 anios",2021,"anemia","pearson",0.108208213218546,0.737820165665279,12
+"03.de 40 a 49 anios",2021,"anemia","spearman",0.020979020979021,0.956169154937949,12
+"03.de 40 a 49 anios",2022,"anemia","pearson",-0.168300302501903,0.60107213024864,12
+"03.de 40 a 49 anios",2022,"anemia","spearman",-0.174825174825175,0.588259894923335,12
+"03.de 40 a 49 anios",2023,"anemia","pearson",-0.0578919287554712,0.858166303530813,12
+"03.de 40 a 49 anios",2023,"anemia","spearman",-0.21831527271324,0.495450359532312,12
+"03.de 40 a 49 anios",2024,"anemia","pearson",-0.149413450318809,0.643030076593253,12
+"03.de 40 a 49 anios",2024,"anemia","spearman",-0.273494560822103,0.389711940662244,12
+"04.de 50 a 59 anios",2015,"covid","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"covid","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"covid","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"covid","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"covid","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"covid","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"covid","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"covid","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"covid","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"covid","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"covid","pearson",1,0,12
+"04.de 50 a 59 anios",2020,"covid","spearman",1,0,12
+"04.de 50 a 59 anios",2021,"covid","pearson",1,1.32831694084709e-79,12
+"04.de 50 a 59 anios",2021,"covid","spearman",1,0,12
+"04.de 50 a 59 anios",2022,"covid","pearson",1,0,12
+"04.de 50 a 59 anios",2022,"covid","spearman",1,0,12
+"04.de 50 a 59 anios",2023,"covid","pearson",1,0,12
+"04.de 50 a 59 anios",2023,"covid","spearman",1,0,12
+"04.de 50 a 59 anios",2024,"covid","pearson",1,0,12
+"04.de 50 a 59 anios",2024,"covid","spearman",1,0,12
+"04.de 50 a 59 anios",2015,"resp","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"resp","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"resp","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"resp","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"resp","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"resp","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"resp","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"resp","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"resp","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"resp","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"resp","pearson",0.318661607247976,0.312726637280962,12
+"04.de 50 a 59 anios",2020,"resp","spearman",0.402802719294549,0.194201669418058,12
+"04.de 50 a 59 anios",2021,"resp","pearson",0.9003956379131,6.51850339790757e-05,12
+"04.de 50 a 59 anios",2021,"resp","spearman",0.804195804195804,0.00274613530473303,12
+"04.de 50 a 59 anios",2022,"resp","pearson",0.639783061400341,0.0250572624595824,12
+"04.de 50 a 59 anios",2022,"resp","spearman",0.199650043476429,0.533867048433135,12
+"04.de 50 a 59 anios",2023,"resp","pearson",0.536088780677078,0.0723893593333074,12
+"04.de 50 a 59 anios",2023,"resp","spearman",0.281198987537838,0.375946462465254,12
+"04.de 50 a 59 anios",2024,"resp","pearson",0.56525991721074,0.0554590111608033,12
+"04.de 50 a 59 anios",2024,"resp","spearman",0.665987548780249,0.0180598474865711,12
+"04.de 50 a 59 anios",2015,"circ","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"circ","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"circ","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"circ","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"circ","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"circ","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"circ","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"circ","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"circ","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"circ","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"circ","pearson",0.504110860713439,0.0946886607711764,12
+"04.de 50 a 59 anios",2020,"circ","spearman",0.360771131194248,0.24928250596238,12
+"04.de 50 a 59 anios",2021,"circ","pearson",0.476636575719159,0.117197046381194,12
+"04.de 50 a 59 anios",2021,"circ","spearman",0.510489510489511,0.0936053800282637,12
+"04.de 50 a 59 anios",2022,"circ","pearson",0.583465616094816,0.0464219861571784,12
+"04.de 50 a 59 anios",2022,"circ","spearman",0.178634249426278,0.578567183873968,12
+"04.de 50 a 59 anios",2023,"circ","pearson",-0.00366685986587033,0.990976248825919,12
+"04.de 50 a 59 anios",2023,"circ","spearman",-0.0843596962613514,0.794353386395524,12
+"04.de 50 a 59 anios",2024,"circ","pearson",0.314522785756619,0.319402404834708,12
+"04.de 50 a 59 anios",2024,"circ","spearman",0.334813412501546,0.287422740923071,12
+"04.de 50 a 59 anios",2015,"diabetes","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"diabetes","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"diabetes","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"diabetes","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"diabetes","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"diabetes","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"diabetes","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"diabetes","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"diabetes","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"diabetes","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"diabetes","pearson",0.637865921417219,0.025636371284667,12
+"04.de 50 a 59 anios",2020,"diabetes","spearman",0.661997512579737,0.0190194558338804,12
+"04.de 50 a 59 anios",2021,"diabetes","pearson",0.706394765193517,0.010229515752539,12
+"04.de 50 a 59 anios",2021,"diabetes","spearman",0.636363636363636,0.0301142647296562,12
+"04.de 50 a 59 anios",2022,"diabetes","pearson",0.542843832306834,0.0681891660377424,12
+"04.de 50 a 59 anios",2022,"diabetes","spearman",0.315236910752256,0.31824499801822,12
+"04.de 50 a 59 anios",2023,"diabetes","pearson",0.488093765535664,0.107422114176612,12
+"04.de 50 a 59 anios",2023,"diabetes","spearman",0.33040881035696,0.294204401924103,12
+"04.de 50 a 59 anios",2024,"diabetes","pearson",0.100223672811702,0.756629401831875,12
+"04.de 50 a 59 anios",2024,"diabetes","spearman",0.0545891433426433,0.866191875425757,12
+"04.de 50 a 59 anios",2015,"alzheimer","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"alzheimer","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"alzheimer","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"alzheimer","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"alzheimer","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"alzheimer","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"alzheimer","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"alzheimer","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"alzheimer","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"alzheimer","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"alzheimer","pearson",0.235184144106188,0.461840899774173,12
+"04.de 50 a 59 anios",2020,"alzheimer","spearman",0.497373792520226,0.0999138724178623,12
+"04.de 50 a 59 anios",2021,"alzheimer","pearson",0.513935837016161,0.087402814466781,12
+"04.de 50 a 59 anios",2021,"alzheimer","spearman",0.188811188811189,0.557827775088338,12
+"04.de 50 a 59 anios",2022,"alzheimer","pearson",0.381884352984999,0.220580364385719,12
+"04.de 50 a 59 anios",2022,"alzheimer","spearman",-0.108581602592444,0.736943708354792,12
+"04.de 50 a 59 anios",2023,"alzheimer","pearson",-0.349858997375189,0.264934107870145,12
+"04.de 50 a 59 anios",2023,"alzheimer","spearman",-0.446403392716318,0.145745769816933,12
+"04.de 50 a 59 anios",2024,"alzheimer","pearson",0.0368511275541265,0.909475684718462,12
+"04.de 50 a 59 anios",2024,"alzheimer","spearman",-0.382124003398503,0.220266560478489,12
+"04.de 50 a 59 anios",2015,"metabolic","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"metabolic","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"metabolic","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"metabolic","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"metabolic","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"metabolic","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"metabolic","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"metabolic","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"metabolic","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"metabolic","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"metabolic","pearson",-0.20788639522525,0.516760696120736,12
+"04.de 50 a 59 anios",2020,"metabolic","spearman",-0.115586867275827,0.72055456354042,12
+"04.de 50 a 59 anios",2021,"metabolic","pearson",0.442895232942411,0.14932261388146,12
+"04.de 50 a 59 anios",2021,"metabolic","spearman",0.447552447552448,0.147205377767155,12
+"04.de 50 a 59 anios",2022,"metabolic","pearson",-0.183303531554387,0.568509371690815,12
+"04.de 50 a 59 anios",2022,"metabolic","spearman",-0.346760601827481,0.269479388463033,12
+"04.de 50 a 59 anios",2023,"metabolic","pearson",-0.190380760054113,0.553400598407483,12
+"04.de 50 a 59 anios",2023,"metabolic","spearman",-0.214414227997602,0.503375209329495,12
+"04.de 50 a 59 anios",2024,"metabolic","pearson",0.16614408226473,0.605809353443567,12
+"04.de 50 a 59 anios",2024,"metabolic","spearman",0.167406706250773,0.603033657975761,12
+"04.de 50 a 59 anios",2015,"anemia","pearson",NA,NA,12
+"04.de 50 a 59 anios",2015,"anemia","spearman",NA,NA,12
+"04.de 50 a 59 anios",2016,"anemia","pearson",NA,NA,12
+"04.de 50 a 59 anios",2016,"anemia","spearman",NA,NA,12
+"04.de 50 a 59 anios",2017,"anemia","pearson",NA,NA,12
+"04.de 50 a 59 anios",2017,"anemia","spearman",NA,NA,12
+"04.de 50 a 59 anios",2018,"anemia","pearson",NA,NA,12
+"04.de 50 a 59 anios",2018,"anemia","spearman",NA,NA,12
+"04.de 50 a 59 anios",2019,"anemia","pearson",NA,NA,12
+"04.de 50 a 59 anios",2019,"anemia","spearman",NA,NA,12
+"04.de 50 a 59 anios",2020,"anemia","pearson",-0.312741190082026,0.322299965648498,12
+"04.de 50 a 59 anios",2020,"anemia","spearman",-0.514886954228684,0.0867182974439261,12
+"04.de 50 a 59 anios",2021,"anemia","pearson",-0.454241127071251,0.137954869550288,12
+"04.de 50 a 59 anios",2021,"anemia","spearman",-0.223776223776224,0.484911140402735,12
+"04.de 50 a 59 anios",2022,"anemia","pearson",0.274020527222433,0.388764106895315,12
+"04.de 50 a 59 anios",2022,"anemia","spearman",-0.0420315881003008,0.896806151754385,12
+"04.de 50 a 59 anios",2023,"anemia","pearson",-0.420012672586167,0.174029156772565,12
+"04.de 50 a 59 anios",2023,"anemia","spearman",-0.688937519467703,0.0132137677491185,12
+"04.de 50 a 59 anios",2024,"anemia","pearson",0.342945404237486,0.275137499310893,12
+"04.de 50 a 59 anios",2024,"anemia","spearman",0.393041832067032,0.206255756619983,12
+"05.de 60 a 69 anios",2015,"covid","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"covid","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"covid","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"covid","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"covid","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"covid","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"covid","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"covid","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"covid","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"covid","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"covid","pearson",1,4.25061421071047e-78,12
+"05.de 60 a 69 anios",2020,"covid","spearman",1,0,12
+"05.de 60 a 69 anios",2021,"covid","pearson",1,0,12
+"05.de 60 a 69 anios",2021,"covid","spearman",1,0,12
+"05.de 60 a 69 anios",2022,"covid","pearson",1,0,12
+"05.de 60 a 69 anios",2022,"covid","spearman",1,0,12
+"05.de 60 a 69 anios",2023,"covid","pearson",1,0,12
+"05.de 60 a 69 anios",2023,"covid","spearman",1,0,12
+"05.de 60 a 69 anios",2024,"covid","pearson",1,1.32831694084709e-79,12
+"05.de 60 a 69 anios",2024,"covid","spearman",1,1.32831694084709e-79,12
+"05.de 60 a 69 anios",2015,"resp","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"resp","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"resp","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"resp","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"resp","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"resp","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"resp","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"resp","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"resp","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"resp","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"resp","pearson",0.382631057264136,0.219603499152244,12
+"05.de 60 a 69 anios",2020,"resp","spearman",0.276707954993647,0.383939601453497,12
+"05.de 60 a 69 anios",2021,"resp","pearson",0.74860502092899,0.00509153935308053,12
+"05.de 60 a 69 anios",2021,"resp","spearman",0.755244755244755,0.00659654322080615,12
+"05.de 60 a 69 anios",2022,"resp","pearson",0.574683685520945,0.0506404623215467,12
+"05.de 60 a 69 anios",2022,"resp","spearman",0.244755244755245,0.443504275627885,12
+"05.de 60 a 69 anios",2023,"resp","pearson",0.312149883459798,0.323264831399719,12
+"05.de 60 a 69 anios",2023,"resp","spearman",-0.0245615547037876,0.939604141677502,12
+"05.de 60 a 69 anios",2024,"resp","pearson",0.233313623248634,0.465513928432728,12
+"05.de 60 a 69 anios",2024,"resp","spearman",0.505328747309257,0.0937641028229868,12
+"05.de 60 a 69 anios",2015,"circ","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"circ","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"circ","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"circ","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"circ","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"circ","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"circ","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"circ","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"circ","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"circ","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"circ","pearson",0.51200665490728,0.088802452556862,12
+"05.de 60 a 69 anios",2020,"circ","spearman",0.164623720059511,0.60915800878752,12
+"05.de 60 a 69 anios",2021,"circ","pearson",0.66742775109441,0.0177223541205081,12
+"05.de 60 a 69 anios",2021,"circ","spearman",0.727272727272727,0.0100009174971863,12
+"05.de 60 a 69 anios",2022,"circ","pearson",0.546597510797249,0.0659293470210266,12
+"05.de 60 a 69 anios",2022,"circ","spearman",0.118881118881119,0.716184326595525,12
+"05.de 60 a 69 anios",2023,"circ","pearson",0.26118189441985,0.412234837410301,12
+"05.de 60 a 69 anios",2023,"circ","spearman",-0.0666670770531379,0.836904849456392,12
+"05.de 60 a 69 anios",2024,"circ","pearson",0.200433813648873,0.53222893554882,12
+"05.de 60 a 69 anios",2024,"circ","spearman",0.459389770281143,0.132986613194121,12
+"05.de 60 a 69 anios",2015,"diabetes","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"diabetes","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"diabetes","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"diabetes","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"diabetes","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"diabetes","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"diabetes","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"diabetes","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"diabetes","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"diabetes","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"diabetes","pearson",0.757545109480618,0.0043187029304116,12
+"05.de 60 a 69 anios",2020,"diabetes","spearman",0.490368527836842,0.105548053930175,12
+"05.de 60 a 69 anios",2021,"diabetes","pearson",0.764558607655281,0.003777373933558,12
+"05.de 60 a 69 anios",2021,"diabetes","spearman",0.636363636363636,0.0301142647296562,12
+"05.de 60 a 69 anios",2022,"diabetes","pearson",0.719818855678021,0.00830074544609533,12
+"05.de 60 a 69 anios",2022,"diabetes","spearman",0.27972027972028,0.378709233642039,12
+"05.de 60 a 69 anios",2023,"diabetes","pearson",0.0713419112474613,0.825618014597502,12
+"05.de 60 a 69 anios",2023,"diabetes","spearman",-0.150878121751838,0.639739819602082,12
+"05.de 60 a 69 anios",2024,"diabetes","pearson",0.391881104944913,0.207718805352006,12
+"05.de 60 a 69 anios",2024,"diabetes","spearman",0.632544376002496,0.0272945951426785,12
+"05.de 60 a 69 anios",2015,"alzheimer","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"alzheimer","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"alzheimer","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"alzheimer","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"alzheimer","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"alzheimer","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"alzheimer","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"alzheimer","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"alzheimer","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"alzheimer","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"alzheimer","pearson",0.22873894469563,0.474554051339273,12
+"05.de 60 a 69 anios",2020,"alzheimer","spearman",0.0280210587335339,0.931114067419274,12
+"05.de 60 a 69 anios",2021,"alzheimer","pearson",0.751479521318638,0.00483251430879682,12
+"05.de 60 a 69 anios",2021,"alzheimer","spearman",0.615384615384615,0.0373345113663698,12
+"05.de 60 a 69 anios",2022,"alzheimer","pearson",0.69037302599129,0.0129466650983692,12
+"05.de 60 a 69 anios",2022,"alzheimer","spearman",0.524475524475525,0.0838845872329148,12
+"05.de 60 a 69 anios",2023,"alzheimer","pearson",0.803761372515128,0.00163148614250743,12
+"05.de 60 a 69 anios",2023,"alzheimer","spearman",0.51579264877954,0.086069854045518,12
+"05.de 60 a 69 anios",2024,"alzheimer","pearson",0.310326172978952,0.326250620133178,12
+"05.de 60 a 69 anios",2024,"alzheimer","spearman",0.307437769341995,0.331010202086013,12
+"05.de 60 a 69 anios",2015,"metabolic","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"metabolic","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"metabolic","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"metabolic","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"metabolic","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"metabolic","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"metabolic","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"metabolic","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"metabolic","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"metabolic","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"metabolic","pearson",-0.355350396983912,0.256988179686972,12
+"05.de 60 a 69 anios",2020,"metabolic","spearman",-0.598950130429286,0.0395980557151432,12
+"05.de 60 a 69 anios",2021,"metabolic","pearson",0.427890390184901,0.165252656460966,12
+"05.de 60 a 69 anios",2021,"metabolic","spearman",0.776223776223776,0.0046598806161296,12
+"05.de 60 a 69 anios",2022,"metabolic","pearson",0.460876355814533,0.131574051585926,12
+"05.de 60 a 69 anios",2022,"metabolic","spearman",0.342657342657343,0.276230512588156,12
+"05.de 60 a 69 anios",2023,"metabolic","pearson",0.0531527874433401,0.869685800535233,12
+"05.de 60 a 69 anios",2023,"metabolic","spearman",0.217545198804976,0.497010287562864,12
+"05.de 60 a 69 anios",2024,"metabolic","pearson",0.351895103051125,0.261971515221076,12
+"05.de 60 a 69 anios",2024,"metabolic","spearman",0.201424745430963,0.530160915071381,12
+"05.de 60 a 69 anios",2015,"anemia","pearson",NA,NA,12
+"05.de 60 a 69 anios",2015,"anemia","spearman",NA,NA,12
+"05.de 60 a 69 anios",2016,"anemia","pearson",NA,NA,12
+"05.de 60 a 69 anios",2016,"anemia","spearman",NA,NA,12
+"05.de 60 a 69 anios",2017,"anemia","pearson",NA,NA,12
+"05.de 60 a 69 anios",2017,"anemia","spearman",NA,NA,12
+"05.de 60 a 69 anios",2018,"anemia","pearson",NA,NA,12
+"05.de 60 a 69 anios",2018,"anemia","spearman",NA,NA,12
+"05.de 60 a 69 anios",2019,"anemia","pearson",NA,NA,12
+"05.de 60 a 69 anios",2019,"anemia","spearman",NA,NA,12
+"05.de 60 a 69 anios",2020,"anemia","pearson",-0.0231318970034385,0.943114441412534,12
+"05.de 60 a 69 anios",2020,"anemia","spearman",-0.0665500144921429,0.837187854464164,12
+"05.de 60 a 69 anios",2021,"anemia","pearson",0.132342126938557,0.681801009367224,12
+"05.de 60 a 69 anios",2021,"anemia","spearman",0.195804195804196,0.54287352062982,12
+"05.de 60 a 69 anios",2022,"anemia","pearson",0.86034516982305,0.000329360056597984,12
+"05.de 60 a 69 anios",2022,"anemia","spearman",0.538461538461539,0.0749022866724823,12
+"05.de 60 a 69 anios",2023,"anemia","pearson",0.27146244814709,0.393385044205023,12
+"05.de 60 a 69 anios",2023,"anemia","spearman",0.533336616425103,0.0741504034400408,12
+"05.de 60 a 69 anios",2024,"anemia","pearson",-0.0265934733039545,0.934616796299251,12
+"05.de 60 a 69 anios",2024,"anemia","spearman",0.0706753492740219,0.827225546701578,12
+"06.de 70 a 79 anios",2015,"covid","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"covid","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"covid","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"covid","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"covid","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"covid","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"covid","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"covid","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"covid","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"covid","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"covid","pearson",1,0,12
+"06.de 70 a 79 anios",2020,"covid","spearman",1,0,12
+"06.de 70 a 79 anios",2021,"covid","pearson",1,0,12
+"06.de 70 a 79 anios",2021,"covid","spearman",1,0,12
+"06.de 70 a 79 anios",2022,"covid","pearson",1,0,12
+"06.de 70 a 79 anios",2022,"covid","spearman",1,0,12
+"06.de 70 a 79 anios",2023,"covid","pearson",1,4.25061421071047e-78,12
+"06.de 70 a 79 anios",2023,"covid","spearman",1,0,12
+"06.de 70 a 79 anios",2024,"covid","pearson",1,0,12
+"06.de 70 a 79 anios",2024,"covid","spearman",1,0,12
+"06.de 70 a 79 anios",2015,"resp","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"resp","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"resp","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"resp","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"resp","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"resp","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"resp","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"resp","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"resp","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"resp","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"resp","pearson",0.20617682565747,0.520291593659283,12
+"06.de 70 a 79 anios",2020,"resp","spearman",0.0700526468338346,0.828727854101125,12
+"06.de 70 a 79 anios",2021,"resp","pearson",0.270014626244172,0.39601272988757,12
+"06.de 70 a 79 anios",2021,"resp","spearman",0.286713286713287,0.366408456111988,12
+"06.de 70 a 79 anios",2022,"resp","pearson",0.656284612693003,0.0204576560248445,12
+"06.de 70 a 79 anios",2022,"resp","spearman",0.28371321967703,0.371509666939279,12
+"06.de 70 a 79 anios",2023,"resp","pearson",0.302349454226497,0.339485959753717,12
+"06.de 70 a 79 anios",2023,"resp","spearman",-0.0909090909090909,0.783196910294608,12
+"06.de 70 a 79 anios",2024,"resp","pearson",-0.0733222209277229,0.820845794194133,12
+"06.de 70 a 79 anios",2024,"resp","spearman",-0.115790186460713,0.720080461477296,12
+"06.de 70 a 79 anios",2015,"circ","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"circ","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"circ","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"circ","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"circ","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"circ","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"circ","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"circ","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"circ","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"circ","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"circ","pearson",0.648061731275514,0.0226649378181527,12
+"06.de 70 a 79 anios",2020,"circ","spearman",0.528897483595451,0.0770523903726765,12
+"06.de 70 a 79 anios",2021,"circ","pearson",0.665320091769924,0.0182178444579111,12
+"06.de 70 a 79 anios",2021,"circ","spearman",0.601398601398601,0.0428068689875762,12
+"06.de 70 a 79 anios",2022,"circ","pearson",0.839665198318289,0.000633376669530454,12
+"06.de 70 a 79 anios",2022,"circ","spearman",0.360771131194248,0.24928250596238,12
+"06.de 70 a 79 anios",2023,"circ","pearson",0.420568944488669,0.173400030857503,12
+"06.de 70 a 79 anios",2023,"circ","spearman",0.153846153846154,0.635139955377586,12
+"06.de 70 a 79 anios",2024,"circ","pearson",0.258117361590242,0.417939267783319,12
+"06.de 70 a 79 anios",2024,"circ","spearman",0.322809004678352,0.306115218143036,12
+"06.de 70 a 79 anios",2015,"diabetes","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"diabetes","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"diabetes","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"diabetes","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"diabetes","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"diabetes","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"diabetes","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"diabetes","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"diabetes","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"diabetes","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"diabetes","pearson",0.684837661515702,0.013999066981057,12
+"06.de 70 a 79 anios",2020,"diabetes","spearman",0.455342204419925,0.136882432772603,12
+"06.de 70 a 79 anios",2021,"diabetes","pearson",0.594882636489763,0.0413165394560644,12
+"06.de 70 a 79 anios",2021,"diabetes","spearman",0.622377622377623,0.0348001228553438,12
+"06.de 70 a 79 anios",2022,"diabetes","pearson",0.883518090270411,0.00013845569930499,12
+"06.de 70 a 79 anios",2022,"diabetes","spearman",0.399300086952857,0.198476018031437,12
+"06.de 70 a 79 anios",2023,"diabetes","pearson",0.42349212747637,0.170117473652621,12
+"06.de 70 a 79 anios",2023,"diabetes","spearman",-0.328671328671329,0.297385077720106,12
+"06.de 70 a 79 anios",2024,"diabetes","pearson",0.469417622076645,0.12364731801422,12
+"06.de 70 a 79 anios",2024,"diabetes","spearman",0.491231094075753,0.104843158477306,12
+"06.de 70 a 79 anios",2015,"alzheimer","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"alzheimer","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"alzheimer","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"alzheimer","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"alzheimer","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"alzheimer","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"alzheimer","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"alzheimer","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"alzheimer","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"alzheimer","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"alzheimer","pearson",-0.250679414353945,0.431945391937331,12
+"06.de 70 a 79 anios",2020,"alzheimer","spearman",-0.0665500144921429,0.837187854464164,12
+"06.de 70 a 79 anios",2021,"alzheimer","pearson",-0.225557705183021,0.480887915680011,12
+"06.de 70 a 79 anios",2021,"alzheimer","spearman",-0.055944055944056,0.868980339326347,12
+"06.de 70 a 79 anios",2022,"alzheimer","pearson",0.933734262400599,8.99739189950495e-06,12
+"06.de 70 a 79 anios",2022,"alzheimer","spearman",0.504379057203609,0.0944845356273572,12
+"06.de 70 a 79 anios",2023,"alzheimer","pearson",0.0875636472389101,0.786699171777498,12
+"06.de 70 a 79 anios",2023,"alzheimer","spearman",0.111888111888112,0.732775446034506,12
+"06.de 70 a 79 anios",2024,"alzheimer","pearson",0.409332921794037,0.186385371594672,12
+"06.de 70 a 79 anios",2024,"alzheimer","spearman",0.319300211149239,0.311703524959014,12
+"06.de 70 a 79 anios",2015,"metabolic","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"metabolic","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"metabolic","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"metabolic","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"metabolic","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"metabolic","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"metabolic","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"metabolic","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"metabolic","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"metabolic","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"metabolic","pearson",0.142353935048508,0.658970478503205,12
+"06.de 70 a 79 anios",2020,"metabolic","spearman",-0.122592131959211,0.704272667435206,12
+"06.de 70 a 79 anios",2021,"metabolic","pearson",-0.051719081363304,0.873175414781098,12
+"06.de 70 a 79 anios",2021,"metabolic","spearman",-0.118881118881119,0.716184326595525,12
+"06.de 70 a 79 anios",2022,"metabolic","pearson",0.706536051794963,0.0102076266124932,12
+"06.de 70 a 79 anios",2022,"metabolic","spearman",0.374781660561015,0.230002980006253,12
+"06.de 70 a 79 anios",2023,"metabolic","pearson",0.257320431113423,0.419429071064397,12
+"06.de 70 a 79 anios",2023,"metabolic","spearman",-0.048951048951049,0.88633510886492,12
+"06.de 70 a 79 anios",2024,"metabolic","pearson",0.110176741089818,0.73320268813032,12
+"06.de 70 a 79 anios",2024,"metabolic","spearman",0.136842947635388,0.67150587842799,12
+"06.de 70 a 79 anios",2015,"anemia","pearson",NA,NA,12
+"06.de 70 a 79 anios",2015,"anemia","spearman",NA,NA,12
+"06.de 70 a 79 anios",2016,"anemia","pearson",NA,NA,12
+"06.de 70 a 79 anios",2016,"anemia","spearman",NA,NA,12
+"06.de 70 a 79 anios",2017,"anemia","pearson",NA,NA,12
+"06.de 70 a 79 anios",2017,"anemia","spearman",NA,NA,12
+"06.de 70 a 79 anios",2018,"anemia","pearson",NA,NA,12
+"06.de 70 a 79 anios",2018,"anemia","spearman",NA,NA,12
+"06.de 70 a 79 anios",2019,"anemia","pearson",NA,NA,12
+"06.de 70 a 79 anios",2019,"anemia","spearman",NA,NA,12
+"06.de 70 a 79 anios",2020,"anemia","pearson",-0.39888925161694,0.198981122269747,12
+"06.de 70 a 79 anios",2020,"anemia","spearman",-0.371279028219324,0.234736690629199,12
+"06.de 70 a 79 anios",2021,"anemia","pearson",0.52439918442476,0.0800712705354531,12
+"06.de 70 a 79 anios",2021,"anemia","spearman",0.65034965034965,0.0259115168459695,12
+"06.de 70 a 79 anios",2022,"anemia","pearson",-0.0230044962787646,0.943427299804857,12
+"06.de 70 a 79 anios",2022,"anemia","spearman",-0.322242175435639,0.307014178900402,12
+"06.de 70 a 79 anios",2023,"anemia","pearson",0.503482380475814,0.0951681596310298,12
+"06.de 70 a 79 anios",2023,"anemia","spearman",0.237762237762238,0.457102206809002,12
+"06.de 70 a 79 anios",2024,"anemia","pearson",0.0668359893817399,0.836496526147058,12
+"06.de 70 a 79 anios",2024,"anemia","spearman",-0.154386915280951,0.631881901834675,12
+"07.de 80 anios y mas",2015,"covid","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"covid","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"covid","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"covid","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"covid","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"covid","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"covid","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"covid","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"covid","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"covid","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"covid","pearson",1,0,12
+"07.de 80 anios y mas",2020,"covid","spearman",1,0,12
+"07.de 80 anios y mas",2021,"covid","pearson",1,0,12
+"07.de 80 anios y mas",2021,"covid","spearman",1,0,12
+"07.de 80 anios y mas",2022,"covid","pearson",1,0,12
+"07.de 80 anios y mas",2022,"covid","spearman",1,0,12
+"07.de 80 anios y mas",2023,"covid","pearson",1,0,12
+"07.de 80 anios y mas",2023,"covid","spearman",1,0,12
+"07.de 80 anios y mas",2024,"covid","pearson",1,0,12
+"07.de 80 anios y mas",2024,"covid","spearman",1,0,12
+"07.de 80 anios y mas",2015,"resp","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"resp","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"resp","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"resp","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"resp","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"resp","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"resp","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"resp","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"resp","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"resp","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"resp","pearson",-0.260881983955177,0.412791381037098,12
+"07.de 80 anios y mas",2020,"resp","spearman",-0.448336939736542,0.143798117491237,12
+"07.de 80 anios y mas",2021,"resp","pearson",-0.358489688701699,0.25250889173736,12
+"07.de 80 anios y mas",2021,"resp","spearman",-0.363636363636364,0.246255228012161,12
+"07.de 80 anios y mas",2022,"resp","pearson",0.647162752079604,0.0229163314021664,12
+"07.de 80 anios y mas",2022,"resp","spearman",0.321678321678322,0.308312360549134,12
+"07.de 80 anios y mas",2023,"resp","pearson",0.520715929009364,0.0826024024500206,12
+"07.de 80 anios y mas",2023,"resp","spearman",-0.448336939736542,0.143798117491237,12
+"07.de 80 anios y mas",2024,"resp","pearson",-0.000377213681505608,0.999071700881787,12
+"07.de 80 anios y mas",2024,"resp","spearman",-0.115790186460713,0.720080461477296,12
+"07.de 80 anios y mas",2015,"circ","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"circ","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"circ","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"circ","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"circ","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"circ","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"circ","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"circ","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"circ","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"circ","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"circ","pearson",0.631355416465883,0.0276754186420372,12
+"07.de 80 anios y mas",2020,"circ","spearman",0.679510674288196,0.0150702293109323,12
+"07.de 80 anios y mas",2021,"circ","pearson",0.391830384514134,0.207782880092685,12
+"07.de 80 anios y mas",2021,"circ","spearman",0.356643356643357,0.256012537309024,12
+"07.de 80 anios y mas",2022,"circ","pearson",0.884849564883533,0.000131025037475475,12
+"07.de 80 anios y mas",2022,"circ","spearman",0.405594405594406,0.192612183946047,12
+"07.de 80 anios y mas",2023,"circ","pearson",0.412487902819861,0.182680093102352,12
+"07.de 80 anios y mas",2023,"circ","spearman",-0.266200057968572,0.40297832764889,12
+"07.de 80 anios y mas",2024,"circ","pearson",0.17278777410729,0.591258624156872,12
+"07.de 80 anios y mas",2024,"circ","spearman",0.0701758705822504,0.828430527371102,12
+"07.de 80 anios y mas",2015,"diabetes","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"diabetes","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"diabetes","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"diabetes","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"diabetes","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"diabetes","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"diabetes","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"diabetes","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"diabetes","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"diabetes","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"diabetes","pearson",0.661717339192823,0.0190882104726198,12
+"07.de 80 anios y mas",2020,"diabetes","spearman",0.672505409604812,0.0165692907131667,12
+"07.de 80 anios y mas",2021,"diabetes","pearson",0.403253530612796,0.193655689848213,12
+"07.de 80 anios y mas",2021,"diabetes","spearman",0.398601398601399,0.200972975530579,12
+"07.de 80 anios y mas",2022,"diabetes","pearson",0.901196207516509,6.26940441904975e-05,12
+"07.de 80 anios y mas",2022,"diabetes","spearman",0.566433566433566,0.0590341482159041,12
+"07.de 80 anios y mas",2023,"diabetes","pearson",0.238917776299314,0.454550300493815,12
+"07.de 80 anios y mas",2023,"diabetes","spearman",-0.196147411134737,0.541213725951531,12
+"07.de 80 anios y mas",2024,"diabetes","pearson",0.443005338948389,0.149209505993966,12
+"07.de 80 anios y mas",2024,"diabetes","spearman",0.36140573349859,0.248389384349584,12
+"07.de 80 anios y mas",2015,"alzheimer","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"alzheimer","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"alzheimer","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"alzheimer","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"alzheimer","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"alzheimer","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"alzheimer","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"alzheimer","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"alzheimer","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"alzheimer","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"alzheimer","pearson",0.392988037017368,0.206323423789352,12
+"07.de 80 anios y mas",2020,"alzheimer","spearman",0.199650043476429,0.533867048433135,12
+"07.de 80 anios y mas",2021,"alzheimer","pearson",0.696306803922739,0.0118847686574121,12
+"07.de 80 anios y mas",2021,"alzheimer","spearman",0.615384615384615,0.0373345113663698,12
+"07.de 80 anios y mas",2022,"alzheimer","pearson",0.728951799914293,0.00715364652547596,12
+"07.de 80 anios y mas",2022,"alzheimer","spearman",0.27972027972028,0.378709233642039,12
+"07.de 80 anios y mas",2023,"alzheimer","pearson",0.531211085522322,0.0755304108634335,12
+"07.de 80 anios y mas",2023,"alzheimer","spearman",-0.164623720059511,0.60915800878752,12
+"07.de 80 anios y mas",2024,"alzheimer","pearson",0.13930760893456,0.665889991624929,12
+"07.de 80 anios y mas",2024,"alzheimer","spearman",0.143860534693613,0.655557355423383,12
+"07.de 80 anios y mas",2015,"metabolic","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"metabolic","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"metabolic","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"metabolic","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"metabolic","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"metabolic","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"metabolic","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"metabolic","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"metabolic","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"metabolic","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"metabolic","pearson",-0.240051975493236,0.452346429641054,12
+"07.de 80 anios y mas",2020,"metabolic","spearman",-0.392294822269474,0.207196608827139,12
+"07.de 80 anios y mas",2021,"metabolic","pearson",-0.324543613137587,0.303373344190881,12
+"07.de 80 anios y mas",2021,"metabolic","spearman",-0.195804195804196,0.54287352062982,12
+"07.de 80 anios y mas",2022,"metabolic","pearson",0.660449893925145,0.019401515628628,12
+"07.de 80 anios y mas",2022,"metabolic","spearman",-0.00699300699300699,0.991230036057101,12
+"07.de 80 anios y mas",2023,"metabolic","pearson",0.662557148641324,0.01888266362714,12
+"07.de 80 anios y mas",2023,"metabolic","spearman",0.0980737055673685,0.761715327826085,12
+"07.de 80 anios y mas",2024,"metabolic","pearson",0.191926652624458,0.550122553933128,12
+"07.de 80 anios y mas",2024,"metabolic","spearman",0.0350879352911252,0.913792373910697,12
+"07.de 80 anios y mas",2015,"anemia","pearson",NA,NA,12
+"07.de 80 anios y mas",2015,"anemia","spearman",NA,NA,12
+"07.de 80 anios y mas",2016,"anemia","pearson",NA,NA,12
+"07.de 80 anios y mas",2016,"anemia","spearman",NA,NA,12
+"07.de 80 anios y mas",2017,"anemia","pearson",NA,NA,12
+"07.de 80 anios y mas",2017,"anemia","spearman",NA,NA,12
+"07.de 80 anios y mas",2018,"anemia","pearson",NA,NA,12
+"07.de 80 anios y mas",2018,"anemia","spearman",NA,NA,12
+"07.de 80 anios y mas",2019,"anemia","pearson",NA,NA,12
+"07.de 80 anios y mas",2019,"anemia","spearman",NA,NA,12
+"07.de 80 anios y mas",2020,"anemia","pearson",0.053524222834829,0.86878207919333,12
+"07.de 80 anios y mas",2020,"anemia","spearman",-0.0560421174670677,0.86265976262528,12
+"07.de 80 anios y mas",2021,"anemia","pearson",-0.101329817944507,0.754016159816249,12
+"07.de 80 anios y mas",2021,"anemia","spearman",-0.160839160839161,0.619356169033867,12
+"07.de 80 anios y mas",2022,"anemia","pearson",0.516827384862105,0.0853330520088656,12
+"07.de 80 anios y mas",2022,"anemia","spearman",0.0629370629370629,0.851681911253292,12
+"07.de 80 anios y mas",2023,"anemia","pearson",0.343480971554471,0.274339151525532,12
+"07.de 80 anios y mas",2023,"anemia","spearman",-0.119089499617519,0.712399836889992,12
+"07.de 80 anios y mas",2024,"anemia","pearson",0.689712820126676,0.0130690076866305,12
+"07.de 80 anios y mas",2024,"anemia","spearman",0.638600422298479,0.0254133680576534,12
+"08.sin especificar",2015,"covid","pearson",NA,NA,12
+"08.sin especificar",2015,"covid","spearman",NA,NA,12
+"08.sin especificar",2016,"covid","pearson",NA,NA,12
+"08.sin especificar",2016,"covid","spearman",NA,NA,12
+"08.sin especificar",2017,"covid","pearson",NA,NA,12
+"08.sin especificar",2017,"covid","spearman",NA,NA,12
+"08.sin especificar",2018,"covid","pearson",NA,NA,12
+"08.sin especificar",2018,"covid","spearman",NA,NA,12
+"08.sin especificar",2019,"covid","pearson",NA,NA,12
+"08.sin especificar",2019,"covid","spearman",NA,NA,12
+"08.sin especificar",2020,"covid","pearson",1,0,12
+"08.sin especificar",2020,"covid","spearman",1,0,12
+"08.sin especificar",2021,"covid","pearson",1,0,12
+"08.sin especificar",2021,"covid","spearman",1,0,12
+"08.sin especificar",2022,"covid","pearson",1,0,12
+"08.sin especificar",2022,"covid","spearman",1,0,12
+"08.sin especificar",2023,"covid","pearson",1,0,12
+"08.sin especificar",2023,"covid","spearman",1,0,12
+"08.sin especificar",2024,"covid","pearson",1,0,12
+"08.sin especificar",2024,"covid","spearman",1,0,12
+"08.sin especificar",2015,"resp","pearson",NA,NA,12
+"08.sin especificar",2015,"resp","spearman",NA,NA,12
+"08.sin especificar",2016,"resp","pearson",NA,NA,12
+"08.sin especificar",2016,"resp","spearman",NA,NA,12
+"08.sin especificar",2017,"resp","pearson",NA,NA,12
+"08.sin especificar",2017,"resp","spearman",NA,NA,12
+"08.sin especificar",2018,"resp","pearson",NA,NA,12
+"08.sin especificar",2018,"resp","spearman",NA,NA,12
+"08.sin especificar",2019,"resp","pearson",NA,NA,12
+"08.sin especificar",2019,"resp","spearman",NA,NA,12
+"08.sin especificar",2020,"resp","pearson",0.654922242834619,0.0208120267355248,12
+"08.sin especificar",2020,"resp","spearman",0.690157958899919,0.0129864256750896,12
+"08.sin especificar",2021,"resp","pearson",0.0677515846426922,0.834283842094719,12
+"08.sin especificar",2021,"resp","spearman",0.0736846641113629,0.819972964509617,12
+"08.sin especificar",2022,"resp","pearson",0.479047049871374,0.115093635696237,12
+"08.sin especificar",2022,"resp","spearman",0.445927515919078,0.146227703446361,12
+"08.sin especificar",2023,"resp","pearson",0.053393758652054,0.86909948886405,12
+"08.sin especificar",2023,"resp","spearman",0.102135777489023,0.752113588160319,12
+"08.sin especificar",2024,"resp","pearson",0.340433359610299,0.278899848424536,12
+"08.sin especificar",2024,"resp","spearman",0.414302468352409,0.180569957814836,12
+"08.sin especificar",2015,"circ","pearson",NA,NA,12
+"08.sin especificar",2015,"circ","spearman",NA,NA,12
+"08.sin especificar",2016,"circ","pearson",NA,NA,12
+"08.sin especificar",2016,"circ","spearman",NA,NA,12
+"08.sin especificar",2017,"circ","pearson",NA,NA,12
+"08.sin especificar",2017,"circ","spearman",NA,NA,12
+"08.sin especificar",2018,"circ","pearson",NA,NA,12
+"08.sin especificar",2018,"circ","spearman",NA,NA,12
+"08.sin especificar",2019,"circ","pearson",NA,NA,12
+"08.sin especificar",2019,"circ","spearman",NA,NA,12
+"08.sin especificar",2020,"circ","pearson",0.535258121992535,0.0729178203560999,12
+"08.sin especificar",2020,"circ","spearman",0.633818533683599,0.0268907007358238,12
+"08.sin especificar",2021,"circ","pearson",0.413923384404023,0.181009527789251,12
+"08.sin especificar",2021,"circ","spearman",0.442107984668178,0.15013292547274,12
+"08.sin especificar",2022,"circ","pearson",0.327062827852576,0.299415775640409,12
+"08.sin especificar",2022,"circ","spearman",0.112418701492204,0.727953710633453,12
+"08.sin especificar",2023,"circ","pearson",0.244223235674444,0.444285104104162,12
+"08.sin especificar",2023,"circ","spearman",0.370914139302243,0.23523313348604,12
+"08.sin especificar",2024,"circ","pearson",-0.170952962118593,0.595263631650681,12
+"08.sin especificar",2024,"circ","spearman",-0.207151234176205,0.51827779706781,12
+"08.sin especificar",2015,"diabetes","pearson",NA,NA,12
+"08.sin especificar",2015,"diabetes","spearman",NA,NA,12
+"08.sin especificar",2016,"diabetes","pearson",NA,NA,12
+"08.sin especificar",2016,"diabetes","spearman",NA,NA,12
+"08.sin especificar",2017,"diabetes","pearson",NA,NA,12
+"08.sin especificar",2017,"diabetes","spearman",NA,NA,12
+"08.sin especificar",2018,"diabetes","pearson",NA,NA,12
+"08.sin especificar",2018,"diabetes","spearman",NA,NA,12
+"08.sin especificar",2019,"diabetes","pearson",NA,NA,12
+"08.sin especificar",2019,"diabetes","spearman",NA,NA,12
+"08.sin especificar",2020,"diabetes","pearson",-0.0769395080369879,0.812143210887092,12
+"08.sin especificar",2020,"diabetes","spearman",0.309866838689759,0.327005010215011,12
+"08.sin especificar",2021,"diabetes","pearson",0.527864710829153,0.0777385056511846,12
+"08.sin especificar",2021,"diabetes","spearman",0.589477312890903,0.0436812592951689,12
+"08.sin especificar",2022,"diabetes","pearson",0.352534077778459,0.261045770223886,12
+"08.sin especificar",2022,"diabetes","spearman",0.127407861691165,0.693145057152152,12
+"08.sin especificar",2023,"diabetes","pearson",0.0707025608884547,0.827159909118873,12
+"08.sin especificar",2023,"diabetes","spearman",0.0860090757802302,0.790410908911563,12
+"08.sin especificar",2024,"diabetes","pearson",-0.0363540677478308,0.910692375590906,12
+"08.sin especificar",2024,"diabetes","spearman",-0.0690504113920682,0.83114691252083,12
+"08.sin especificar",2015,"alzheimer","pearson",NA,NA,12
+"08.sin especificar",2015,"alzheimer","spearman",NA,NA,12
+"08.sin especificar",2016,"alzheimer","pearson",NA,NA,12
+"08.sin especificar",2016,"alzheimer","spearman",NA,NA,12
+"08.sin especificar",2017,"alzheimer","pearson",NA,NA,12
+"08.sin especificar",2017,"alzheimer","spearman",NA,NA,12
+"08.sin especificar",2018,"alzheimer","pearson",NA,NA,12
+"08.sin especificar",2018,"alzheimer","spearman",NA,NA,12
+"08.sin especificar",2019,"alzheimer","pearson",NA,NA,12
+"08.sin especificar",2019,"alzheimer","spearman",NA,NA,12
+"08.sin especificar",2020,"alzheimer","pearson",0.176944427197747,0.582224345466863,12
+"08.sin especificar",2020,"alzheimer","spearman",0.00704242815203999,0.98267017047643,12
+"08.sin especificar",2021,"alzheimer","pearson",0.463255458124771,0.129333791518702,12
+"08.sin especificar",2021,"alzheimer","spearman",0.224562785863201,0.482876710115563,12
+"08.sin especificar",2022,"alzheimer","pearson",0.650228215558377,0.0220673438062567,12
+"08.sin especificar",2022,"alzheimer","spearman",0.51712602686414,0.0851211966553434,12
+"08.sin especificar",2023,"alzheimer","pearson",-0.108243440390938,0.737737464619975,12
+"08.sin especificar",2023,"alzheimer","spearman",0.161267017087932,0.61657562850463,12
+"08.sin especificar",2024,"alzheimer","pearson",-0.0908771801134284,0.778801363564656,12
+"08.sin especificar",2024,"alzheimer","spearman",0.464939436706592,0.127763209132251,12
+"08.sin especificar",2015,"metabolic","pearson",NA,NA,12
+"08.sin especificar",2015,"metabolic","spearman",NA,NA,12
+"08.sin especificar",2016,"metabolic","pearson",NA,NA,12
+"08.sin especificar",2016,"metabolic","spearman",NA,NA,12
+"08.sin especificar",2017,"metabolic","pearson",NA,NA,12
+"08.sin especificar",2017,"metabolic","spearman",NA,NA,12
+"08.sin especificar",2018,"metabolic","pearson",NA,NA,12
+"08.sin especificar",2018,"metabolic","spearman",NA,NA,12
+"08.sin especificar",2019,"metabolic","pearson",NA,NA,12
+"08.sin especificar",2019,"metabolic","spearman",NA,NA,12
+"08.sin especificar",2020,"metabolic","pearson",0.162604230709748,0.613616669538532,12
+"08.sin especificar",2020,"metabolic","spearman",0.23240012901732,0.467312644206468,12
+"08.sin especificar",2021,"metabolic","pearson",0.163018588129037,0.612700858183549,12
+"08.sin especificar",2021,"metabolic","spearman",-0.224562785863201,0.482876710115563,12
+"08.sin especificar",2022,"metabolic","pearson",-0.330951050504538,0.293364705973918,12
+"08.sin especificar",2022,"metabolic","spearman",-0.288541333829991,0.363066694855494,12
+"08.sin especificar",2023,"metabolic","pearson",0.485727744631641,0.109394679236934,12
+"08.sin especificar",2023,"metabolic","spearman",0.403167542719829,0.193759757038057,12
+"08.sin especificar",2024,"metabolic","pearson",0.0387047390076917,0.904940053126024,12
+"08.sin especificar",2024,"metabolic","spearman",-0.119687379746252,0.711010602725397,12
+"08.sin especificar",2015,"anemia","pearson",NA,NA,12
+"08.sin especificar",2015,"anemia","spearman",NA,NA,12
+"08.sin especificar",2016,"anemia","pearson",NA,NA,12
+"08.sin especificar",2016,"anemia","spearman",NA,NA,12
+"08.sin especificar",2017,"anemia","pearson",NA,NA,12
+"08.sin especificar",2017,"anemia","spearman",NA,NA,12
+"08.sin especificar",2018,"anemia","pearson",NA,NA,12
+"08.sin especificar",2018,"anemia","spearman",NA,NA,12
+"08.sin especificar",2019,"anemia","pearson",NA,NA,12
+"08.sin especificar",2019,"anemia","spearman",NA,NA,12
+"08.sin especificar",2020,"anemia","pearson",0.453224024504481,0.138950331673549,12
+"08.sin especificar",2020,"anemia","spearman",-0.274654697929559,0.387622850591306,12
+"08.sin especificar",2021,"anemia","pearson",0.122347345871168,0.704839734313221,12
+"08.sin especificar",2021,"anemia","spearman",0.256141927625214,0.421636997260854,12
+"08.sin especificar",2022,"anemia","pearson",0.292033046556112,0.35702422704659,12
+"08.sin especificar",2022,"anemia","spearman",0.318519654227913,0.312954313444564,12
+"08.sin especificar",2023,"anemia","pearson",-0.179527129213897,0.576638462584628,12
+"08.sin especificar",2023,"anemia","spearman",0.0322534034175863,0.920736381588635,12
+"08.sin especificar",2024,"anemia","pearson",-0.301287089658886,0.341270184081943,12
+"08.sin especificar",2024,"anemia","spearman",-0.262391563289859,0.409993856399712,12
