@@ -1,0 +1,109 @@
+CAUSA,nombre,avg_2021_2023,anio_2021,anio_2022,anio_2023,anio_2024,delta,pct_change
+W01,Caída en el mismo nivel por deslizamiento tropezón y traspié,28.7,12,19,55,136,107.3,374
+W18,Otras caídas en el mismo nivel,110.3,85,84,162,188,77.7,70
+X59,Exposición a factores no especificados,987.3,1054,1004,904,1063,75.7,8
+W19,Caída no especificada,62,57,55,74,111,49,79
+W80,Inhalación e ingestión de otros objetos que causan obstrucción de las vías respiratorias,23.3,19,33,18,51,27.7,119
+W74,Ahogamiento y sumersión no especificados,16,23,15,10,30,14,88
+X00,Exposición a fuego no controlado en edificio u otra construcción,11.3,12,16,6,19,7.7,68
+W06,Caída que implica cama,8.3,6,5,14,15,6.7,81
+W44,Cuerpo extraño que penetra por el ojo u orificio natural,4,1,4,7,10,6,150
+X44,Envenenamiento accidental por y exposición a otras drogas medicamentos y sustancias biológicas y los no especificados,3,3,1,5,9,6,NA
+X47,Envenenamiento accidental por y exposición a otros gases y vapores,30,27,34,29,35,5,17
+W10,Caída en o desde escalera o escalones,6.3,7,5,7,11,4.7,75
+X08,Exposición a otros humos fuegos o llamas especificados,3.7,1,3,7,8,4.3,116
+W86,Exposición a otras corrientes eléctricas especificadas,4.7,2,6,6,8,3.3,70
+W11,Caída en o desde escalera manuales,1.3,1,2,1,4,2.7,NA
+W13,Caída desde fuera o a través de un edificio u otra construcción,5.3,4,5,7,8,2.7,51
+W69,Ahogamiento y sumersión mientras se está en aguas naturales,8.3,9,7,9,11,2.7,33
+W15,Caída desde peñasco,1.5,0,2,1,4,2.5,NA
+W67,Ahogamiento y sumersión mientras se está en una piscina,2.5,2,0,3,5,2.5,NA
+W75,Sofocación y estrangulamiento accidental en la cama,2,0,3,1,4,2,NA
+X33,Víctima de rayo,1,1,1,1,3,2,NA
+W04,Caída al ser trasladado o sostenido por otras personas,0,0,0,0,2,2,NA
+W51,Choque o empellón contra otra persona,0,0,0,0,2,2,NA
+W94,Exposición a presión de aire alta y baja y a cambios en la presión del aire,0,0,0,0,2,2,NA
+X20,Contacto traumático con serpientes y lagartos venenosos,0,0,0,0,2,2,NA
+W54,Mordedura o ataque de perro,2.3,3,3,1,4,1.7,NA
+X42,Envenenamiento accidental por y exposición a narcóticos y psicodislépticos [alucinógenos] no clasificados en otra parte,3.3,2,5,3,5,1.7,52
+W00,Caída en el mismo nivel por hielo o nieve,1,1,0,1,2,1,NA
+W23,Atrapado aplastado trabado o apretado en o entre objetos,2,2,2,0,3,1,NA
+W24,Contacto traumático con dispositivos de elevación o transmisión no clasificado en otra parte,1,0,1,0,2,1,NA
+W32,Disparo de arma corta,1,0,1,1,2,1,NA
+W78,Inhalación de contenidos gástricos,9,12,7,8,10,1,11
+X04,Exposición a ignición de material altamente inflamable,3,3,1,5,4,1,NA
+X30,Exposición al calor natural excesivo,2,0,2,0,3,1,NA
+X45,Envenenamiento accidental por y exposición al alcohol,1,1,1,1,2,1,NA
+W39,Explosión de fueros artificiales,0,0,0,0,1,1,NA
+W49,Exposición a otras fuerzas mecánicas inanimadas y las no especificadas,0,0,0,0,1,1,NA
+W59,Mordedura o aplastamiento por otros reptiles,0,0,0,0,1,1,NA
+W92,Exposición a calor excesivo de origen artificial,0,0,0,0,1,1,NA
+X03,Exposición a fuego controlado en lugar que no es edificio u otra construcción,0,0,0,0,1,1,NA
+X22,Contacto traumático con escorpión,0,0,0,0,1,1,NA
+W20,Golpe por objeto arrojado proyectado o que cae,4.3,5,6,2,5,0.7,16
+W87,Exposición a corriente eléctrica no especificada,24.3,18,31,24,25,0.7,3
+X15,Contacto con utensilios domésticos calientes,1.5,2,0,1,2,0.5,NA
+X02,Exposición a fuego controlado en edificio u otra construcción,1.7,3,1,1,2,0.3,NA
+W09,Caída que implica equipos para juegos infantiles,1,0,1,0,1,0,NA
+W17,Otras caídas de un nivel a otro,12,14,7,15,12,0,0
+W22,Golpe contra o golpeado por otros objetos,2,2,0,2,2,0,NA
+X01,Exposición a fuego no controlado en lugar que no es edificio u otra construcción,1,0,1,1,1,0,NA
+X16,Contacto con radiadores cañerías y artefactos para calefacción calientes,1,0,0,1,1,0,NA
+X40,Envenenamiento accidental por y exposición a analgésicos no narcóticos antipiréticos y antirreumáticos,1,0,0,1,1,0,NA
+X48,Envenenamiento accidental por y exposición a plaguicidas,1,1,0,0,1,0,NA
+X53,Privación de alimentos,1,0,1,0,1,0,NA
+X57,Privación no especificada,1,1,0,1,1,0,NA
+W36,Explosión y rotura de cilindro con gas,2.3,2,1,4,2,-0.3,NA
+W40,Explosión de otros materiales,1.5,1,2,0,1,-0.5,NA
+X05,Exposición a ignición o fusión de ropas de dormir,1.5,0,1,2,1,-0.5,NA
+X18,Contacto con otros metales calientes,1.5,0,1,2,1,-0.5,NA
+X31,Exposición al frío natural excesivo,1.5,2,0,1,1,-0.5,NA
+W85,Exposición a líneas de transmisión eléctrica,2.7,2,4,2,2,-0.7,NA
+W02,Caída por patines para hielo esquís patines de ruedas o patineta,1,1,0,0,0,-1,NA
+W05,Caída que implica silla de ruedas,2,0,1,3,1,-1,NA
+W12,Caída en o desde andamio,1,0,0,1,0,-1,NA
+W14,Caída desde un árbol,1,0,1,1,0,-1,NA
+W16,Salto o zambullida dentro del agua que causa otro traumatismo sin sumersión o ahogamiento,1,0,1,0,0,-1,NA
+W25,Contacto traumático con vidrio cortante,1,0,1,1,0,-1,NA
+W26,Contacto traumático con cuchillo espada daga o puñal,1,0,0,1,0,-1,NA
+W29,Contacto traumático con otras herramientas manuales y artefactos del hogar con motor,1,0,0,1,0,-1,NA
+W30,Contacto traumático con maquinaria agrícola,1,0,0,1,0,-1,NA
+W38,Explosión y rotura de otros dispositivos presurizados especificado,1,1,0,1,0,-1,NA
+W52,Persona aplastada empujada o pisoteada por una multitud o estampida humana,1,0,0,1,0,-1,NA
+W55,Mordedura o ataque de otros mamíferos,2,0,2,0,1,-1,NA
+W58,Mordedura o ataque de cocodrilo o caimán,1,0,0,1,0,-1,NA
+W76,Otros estrangulamientos y ahorcamientos accidentales,1,1,1,1,0,-1,NA
+W77,Obstrucción de la respiración debida a hundimiento caída de tierra u otras sustancias,1,1,1,0,0,-1,NA
+W81,Confinado o atrapado en un ambiente con bajo contenido de oxígeno,1,0,0,1,0,-1,NA
+X11,Contacto con agua caliente corriente,1,0,1,0,0,-1,NA
+X12,Contacto con otros líquidos calientes,3,0,0,3,2,-1,NA
+X13,Contacto con vapor de agua y otros vapores calientes,1,0,1,1,0,-1,NA
+X19,Contacto con otras sustancias calientes y las no especificadas,1,1,0,0,0,-1,NA
+X23,Contacto traumático con avispones avispas y abejas,2,2,0,0,1,-1,NA
+X25,Contacto traumático con otros artrópodos venenosos,1,0,1,0,0,-1,NA
+X29,Contacto traumático con animales y plantas venenosos no especificados,1,1,1,0,0,-1,NA
+X32,Exposición a rayos solares,1,0,0,1,0,-1,NA
+X34,Víctima de terremoto,1,0,0,1,0,-1,NA
+X37,Víctima de tormenta cataclísmica,1,1,0,0,0,-1,NA
+X54,Privación de agua,1,0,0,1,0,-1,NA
+X58,Exposición a otros factores especificados,1,0,0,1,0,-1,NA
+W34,Disparo de otras armas de fuego y las no especificadas,2.3,2,4,1,1,-1.3,NA
+W64,Exposición a otras fuerzas mecánicas animadas y las no especificadas,1.3,1,1,2,0,-1.3,NA
+X41,Envenenamiento accidental por y exposición a drogas antiepilépticas sedantes hipnóticas antiparkinsonianas y psicotrópicas no clasificadas en otra parte,1.3,1,1,2,0,-1.3,NA
+W08,Caída que implica otro mueble,1.5,0,1,2,0,-1.5,NA
+W35,Explosión y rotura de caldera,1.5,0,2,1,0,-1.5,NA
+W83,Otras obstrucciones especificadas de la respiración,1.5,1,0,2,0,-1.5,NA
+X06,Exposición a ignición o fusión de otras ropas y accesorios,1.5,2,0,1,0,-1.5,NA
+W33,Disparo de rifle escopeta y arma larga,2,2,0,0,0,-2,NA
+W73,Otros ahogamientos y sumersiones especificados,4,5,3,4,2,-2,-50
+W79,Inhalación e ingestión de alimento que causa obstrucción de las vías respiratorias,58,36,57,81,56,-2,-3
+X14,Contacto con aire y gases calientes,2,2,0,0,0,-2,NA
+X21,Contacto traumático con arañas venenosas,2,0,1,3,0,-2,NA
+X36,Víctima de avalancha derrumbe y otros movimientos de tierra,3,0,3,0,1,-2,NA
+X50,Exceso de esfuerzo y movimientos extenuantes y repetitivos,2,0,2,2,0,-2,NA
+X49,Envenenamiento accidental por y exposición a otros productos químicos y sustancias nocivas y los no especificados,5.3,7,5,4,3,-2.3,-43
+W07,Caída que implica silla,4,0,0,4,1,-3,-75
+W68,Ahogamiento y sumersión consecutivos a caída en una piscina,5.3,1,9,6,1,-4.3,-81
+W70,Ahogamiento y sumersión posterior a caída en aguas naturales,6,9,5,4,0,-6,-100
+X09,Exposición a humos fuegos o llamas no especificados,48,51,48,45,39,-9,-19
+W84,Obstrucción no especificada de la respiración,65,64,61,70,36,-29,-45

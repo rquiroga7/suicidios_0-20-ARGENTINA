@@ -1,0 +1,11 @@
+grupo,CAUSA,nombre,anio_2021,anio_2022,anio_2023,anio_2024,total_2021_2024
+W (otros accidentes),W18,Otras caídas en el mismo nivel,144,144,266,340,894
+W (otros accidentes),W87,Exposición a corriente eléctrica no especificada,165,179,161,161,666
+W (otros accidentes),W19,Caída no especificada,127,121,153,230,631
+W (otros accidentes),W84,Obstrucción no especificada de la respiración,171,194,170,92,627
+W (otros accidentes),W79,Inhalación e ingestión de alimento que causa obstrucción de las vías respiratorias,87,122,178,137,524
+X00-X59 (ext. accidentales),X59,Exposición a factores no especificados,2489,2228,1970,2189,8876
+X00-X59 (ext. accidentales),X09,Exposición a humos fuegos o llamas no especificados,128,140,138,110,516
+X00-X59 (ext. accidentales),X47,Envenenamiento accidental por y exposición a otros gases y vapores,85,85,76,96,342
+X00-X59 (ext. accidentales),X00,Exposición a fuego no controlado en edificio u otra construcción,39,35,31,42,147
+X00-X59 (ext. accidentales),X42,Envenenamiento accidental por y exposición a narcóticos y psicodislépticos [alucinógenos] no clasificados en otra parte,11,20,18,20,69

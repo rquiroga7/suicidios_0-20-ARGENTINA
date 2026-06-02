@@ -753,3 +753,185 @@ p_hom_fem <- ggplot(hom_vs_fem,
 ggsave("plots/homicidios_vs_femicidios_mujeres_2017_2024.png", p_hom_fem,
        width = 8, height = 5, dpi = 150)
 cat("Guardado: plots/homicidios_vs_femicidios_mujeres_2017_2024.png\n")
+
+# ── 13. Stacked bars: W (otros accidentes), X00-X59 (externas accidentales) ──
+is_v_cause   <- function(causa) grepl("^V", causa, perl = TRUE)
+is_w_cause   <- function(causa) grepl("^W", causa, perl = TRUE)
+is_x0059     <- function(causa) grepl("^X([0-4][0-9]|5[0-9])$", causa, perl = TRUE)
+
+vwx_labelled_0523 <- raw %>%
+  filter(is_w_cause(CAUSA) | is_x0059(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    ),
+    tipo = if_else(is_w_cause(CAUSA),
+                   "Otros accidentes (W00-W99)",
+                   "Causas externas accidentales (X00-X59)")
+  ) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+vwx_labelled_24 <- raw24 %>%
+  filter(is_w_cause(CAUSA) | is_x0059(CAUSA)) %>%
+  mutate(tipo = if_else(is_w_cause(CAUSA),
+                        "Otros accidentes (W00-W99)",
+                        "Causas externas accidentales (X00-X59)")) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+vwx_labelled <- bind_rows(vwx_labelled_0523, vwx_labelled_24) %>%
+  filter(sexo %in% c("Varones", "Mujeres")) %>%
+  group_by(anio, sexo, tipo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
+  mutate(tipo = factor(tipo, levels = c("Otros accidentes (W00-W99)",
+                                        "Causas externas accidentales (X00-X59)")))
+
+footnote_vwx <- paste0(
+  "Datos del Ministerio de Salud Argentina - DEIS.\n",
+  "Codigos CIE-10: W00-W99 (otros accidentes), X00-X59 (causas externas accidentales).\n",
+  "Analisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA"
+)
+
+tipo_colours_vwx_varones <- c(
+  "Otros accidentes (W00-W99)"              = "#1565c0",
+  "Causas externas accidentales (X00-X59)"  = "#4dd0e1"
+)
+tipo_colours_vwx_mujeres <- c(
+  "Otros accidentes (W00-W99)"              = "#ad1457",
+  "Causas externas accidentales (X00-X59)"  = "#f48fb1"
+)
+
+make_stacked_bar_vwx <- function(data, sexo_sel, title_suffix, colours) {
+  d <- data %>% filter(sexo == sexo_sel) %>%
+    arrange(anio, tipo) %>%
+    group_by(anio) %>%
+    mutate(label_y = cumsum(muertes) - muertes + muertes * 0.06 + 10) %>%
+    ungroup()
+  ggplot(d, aes(x = anio, y = muertes, fill = tipo)) +
+    geom_col(width = 0.8, position = position_stack(reverse = TRUE)) +
+    geom_text(aes(y = label_y, label = scales::comma(muertes)),
+              angle = 90, hjust = 0, vjust = 0.5,
+              fontface = "bold", colour = "white", size = 2.8) +
+    scale_x_continuous(breaks = 2005:2024) +
+    scale_y_continuous(labels = scales::comma_format()) +
+    scale_fill_manual(values = colours) +
+    labs(
+      title    = paste("Causas externas accidentales (W, X00-X59) -", title_suffix),
+      subtitle = "W00-W99 (otros accidentes) + X00-X59 (ext. accidentales), Argentina 2005-2024",
+      x = "Año", y = "Numero de muertes", fill = NULL, caption = footnote_vwx
+    ) +
+    theme_bw(base_size = 12) +
+    theme(
+      axis.text.x    = element_text(angle = 45, hjust = 1),
+      legend.position = "top",
+      plot.caption   = element_text(hjust = 0, size = 7)
+    )
+}
+
+p_vwx_varones <- make_stacked_bar_vwx(vwx_labelled, "Varones", "Varones", tipo_colours_vwx_varones)
+ggsave("plots/causas_vwx_stacked_varones.png", p_vwx_varones,
+       width = 10, height = 5, dpi = 150)
+cat("Guardado: plots/causas_vwx_stacked_varones.png\n")
+
+p_vwx_mujeres <- make_stacked_bar_vwx(vwx_labelled, "Mujeres", "Mujeres", tipo_colours_vwx_mujeres)
+ggsave("plots/causas_vwx_stacked_mujeres.png", p_vwx_mujeres,
+       width = 10, height = 5, dpi = 150)
+cat("Guardado: plots/causas_vwx_stacked_mujeres.png\n")
+
+# ── 15. Top-5 W and X00-X59 causes of death 2021-2024 ────────────────────────
+causa_nombres <- read_csv("causas_nombre.txt", show_col_types = FALSE) %>%
+  rename(CAUSA = CODIGO, nombre = VALOR)
+
+wx_top <- bind_rows(
+  vwx_labelled_0523 %>% mutate(CAUSA_raw = NA),  # need raw CAUSA — rebuild from raw
+  vwx_labelled_24   %>% mutate(CAUSA_raw = NA)
+)
+
+# Rebuild from raw data with cause-level detail
+wx_detail_0523 <- raw %>%
+  filter((is_w_cause(CAUSA) | is_x0059(CAUSA)), anio >= 2021L) %>%
+  mutate(
+    sexo = case_when(SEXO == "1" ~ "Varones", SEXO == "2" ~ "Mujeres", TRUE ~ "Indeterminado"),
+    grupo = if_else(is_w_cause(CAUSA), "W (otros accidentes)", "X00-X59 (ext. accidentales)")
+  ) %>%
+  select(anio, sexo, grupo, CAUSA, CUENTA)
+
+wx_detail_24 <- raw24 %>%
+  filter((is_w_cause(CAUSA) | is_x0059(CAUSA)), anio >= 2021L) %>%
+  mutate(grupo = if_else(is_w_cause(CAUSA), "W (otros accidentes)", "X00-X59 (ext. accidentales)")) %>%
+  select(anio, sexo, grupo, CAUSA, CUENTA)
+
+wx_detail <- bind_rows(wx_detail_0523, wx_detail_24) %>%
+  filter(sexo %in% c("Varones", "Mujeres"))
+
+wx_table <- wx_detail %>%
+  group_by(grupo, CAUSA) %>%
+  summarise(muertes_2021_2024 = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
+  left_join(causa_nombres, by = "CAUSA") %>%
+  arrange(grupo, desc(muertes_2021_2024)) %>%
+  group_by(grupo) %>%
+  slice_head(n = 5) %>%
+  ungroup() %>%
+  select(grupo, CAUSA, nombre)
+
+wx_yearly <- wx_detail %>%
+  group_by(grupo, CAUSA, anio) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = anio, values_from = muertes, values_fill = 0,
+              names_prefix = "anio_")
+
+wx_table <- wx_table %>%
+  left_join(wx_yearly, by = c("grupo", "CAUSA")) %>%
+  mutate(total_2021_2024 = rowSums(across(starts_with("anio_")), na.rm = TRUE)) %>%
+  arrange(grupo, desc(total_2021_2024))
+
+cat("\n=== Top 5 causas W y X00-X59 (2021-2024) ===\n")
+print(wx_table, n = Inf)
+write_csv(wx_table, "outputs/top5_wx_causas_2021_2024.csv")
+cat("Guardado: outputs/top5_wx_causas_2021_2024.csv\n")
+
+# ── Mujeres 2024 vs 2021-2023: por causa (sin desagregacion por edad) ─────────
+wx_detail_mujeres <- bind_rows(
+  raw %>%
+    filter((is_w_cause(CAUSA) | is_x0059(CAUSA)), SEXO == "2", anio >= 2021L) %>%
+    select(anio, CAUSA, CUENTA),
+  raw24 %>%
+    filter((is_w_cause(CAUSA) | is_x0059(CAUSA)), sexo == "Mujeres") %>%
+    select(anio, CAUSA, CUENTA)
+)
+
+avg_2123_causa <- wx_detail_mujeres %>%
+  filter(anio %in% 2021:2023) %>%
+  group_by(anio, CAUSA) %>%
+  summarise(muertes = sum(CUENTA, na.rm=TRUE), .groups="drop") %>%
+  group_by(CAUSA) %>%
+  summarise(avg_2021_2023 = round(mean(muertes, na.rm=TRUE), 1), .groups="drop")
+
+# yearly totals per cause
+wx_yearly_causa <- wx_detail_mujeres %>%
+  group_by(anio, CAUSA) %>%
+  summarise(muertes = sum(CUENTA, na.rm=TRUE), .groups="drop") %>%
+  pivot_wider(names_from=anio, values_from=muertes, values_fill=0, names_prefix="anio_")
+
+d2024_causa <- wx_detail_mujeres %>%
+  filter(anio == 2024) %>%
+  group_by(CAUSA) %>%
+  summarise(muertes_2024 = sum(CUENTA, na.rm=TRUE), .groups="drop")
+
+wx_causa_table <- avg_2123_causa %>%
+  full_join(d2024_causa, by="CAUSA") %>%
+  replace_na(list(avg_2021_2023=0, muertes_2024=0)) %>%
+  mutate(
+    delta      = round(muertes_2024 - avg_2021_2023, 1),
+    pct_change = ifelse(avg_2021_2023 > 3, round(100*delta/avg_2021_2023), NA_real_)
+  ) %>%
+  left_join(causa_nombres, by="CAUSA") %>%
+  left_join(wx_yearly_causa, by="CAUSA") %>%
+  arrange(desc(delta)) %>%
+  select(CAUSA, nombre, avg_2021_2023, any_of(c("anio_2021","anio_2022","anio_2023","anio_2024")), delta, pct_change)
+
+cat("\n=== Mujeres W+X00-X59: 2024 vs promedio 2021-2023 (por causa) ===\n")
+print(wx_causa_table, n=30)
+write_csv(wx_causa_table, "outputs/wx_causas_mujeres_2024_vs_2123.csv")
+cat("Guardado: outputs/wx_causas_mujeres_2024_vs_2123.csv\n")
