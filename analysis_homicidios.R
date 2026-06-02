@@ -350,23 +350,23 @@ hom_und_labelled_0523 <- raw %>%
       SEXO == "2" ~ "Mujeres",
       TRUE        ~ "Indeterminado"
     ),
-    tipo = if_else(is_homicide(CAUSA), "Homicidio", "Intencion indeterminada")
+    tipo = if_else(is_homicide(CAUSA), "Homicidios", "Intencion indeterminada")
   ) %>%
   select(anio, sexo, tipo, CUENTA)
 
 hom_und_labelled_24 <- raw24 %>%
   filter(is_homicide(CAUSA) | is_undetermined(CAUSA)) %>%
-  mutate(tipo = if_else(is_homicide(CAUSA), "Homicidio", "Intencion indeterminada")) %>%
+  mutate(tipo = if_else(is_homicide(CAUSA), "Homicidios", "Intencion indeterminada")) %>%
   select(anio, sexo, tipo, CUENTA)
 
 hom_und_labelled <- bind_rows(hom_und_labelled_0523, hom_und_labelled_24) %>%
   filter(sexo %in% c("Varones", "Mujeres")) %>%
   group_by(anio, sexo, tipo) %>%
   summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
-  mutate(tipo = factor(tipo, levels = c("Homicidio", "Intencion indeterminada")))
+  mutate(tipo = factor(tipo, levels = c("Homicidios", "Intencion indeterminada")))
 
-tipo_colours_varones <- c("Homicidio" = "#1565c0", "Intencion indeterminada" = "#4dd0e1")
-tipo_colours_mujeres <- c("Homicidio" = "#ad1457", "Intencion indeterminada" = "#f48fb1")
+tipo_colours_varones <- c("Homicidios" = "#1565c0", "Intencion indeterminada" = "#4dd0e1")
+tipo_colours_mujeres <- c("Homicidios" = "#ad1457", "Intencion indeterminada" = "#f48fb1")
 
 make_stacked_bar <- function(data, sexo_sel, title_suffix, colours) {
   d <- data %>% filter(sexo == sexo_sel) %>%
@@ -382,7 +382,7 @@ make_stacked_bar <- function(data, sexo_sel, title_suffix, colours) {
     scale_x_continuous(breaks = 2005:2024) +
     scale_fill_manual(values = colours) +
     labs(
-      title = paste("Homicidio + intencion indeterminada -", title_suffix),
+      title = paste("Homicidios + intencion indeterminada -", title_suffix),
       subtitle = "X85-Y09 (homicidio) + Y10-Y34 (intencion indeterminada), Argentina 2005-2024",
       x = "Año", y = "Numero de muertes", fill = NULL, caption = footnote
     ) +
@@ -603,14 +603,14 @@ hom_und_r99_labelled <- bind_rows(hom_und_labelled_0523, hom_und_labelled_24,
   filter(sexo %in% c("Varones", "Mujeres")) %>%
   group_by(anio, sexo, tipo) %>%
   summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
-  mutate(tipo = factor(tipo, levels = c("Homicidio",
+  mutate(tipo = factor(tipo, levels = c("Homicidios",
                                         "Intencion indeterminada",
                                         "R99 (causa mal definida)")))
 
-tipo_colours_varones3 <- c("Homicidio"                = "#1565c0",
+tipo_colours_varones3 <- c("Homicidios"                = "#1565c0",
                             "Intencion indeterminada"  = "#4dd0e1",
                             "R99 (causa mal definida)" = "#546e7a")
-tipo_colours_mujeres3 <- c("Homicidio"                = "#ad1457",
+tipo_colours_mujeres3 <- c("Homicidios"                = "#ad1457",
                             "Intencion indeterminada"  = "#f48fb1",
                             "R99 (causa mal definida)" = "#546e7a")
 
@@ -630,7 +630,7 @@ make_stacked_bar3 <- function(data, sexo_sel, title_suffix, colours) {
     coord_cartesian(ylim = c(50, ymax)) +
     scale_fill_manual(values = colours) +
     labs(
-      title = paste("Homicidio + indeterminado + R99 -", title_suffix),
+      title = paste("Homicidios + indeterminado + R99 -", title_suffix),
       subtitle = "X85-Y09 (homicidio) + Y10-Y34 (indeterminado) + R99 (causa mal definida), Argentina 2005-2024",
       x = "Año", y = "Numero de muertes (escala log)", fill = NULL, caption = footnote
     ) +
@@ -654,8 +654,8 @@ cat("Guardado: plots/homicidios_r99_stacked_mujeres.png\n")
 
 # ── 12. Femicidios comparison plots ──────────────────────────────────────────
 femicidios_csjn <- tibble(
-  anio    = c(2017L, 2018L, 2019L, 2020L, 2021L, 2022L, 2023L, 2024L),
-  muertes = c(252,   257,   260,   254,   231,   226,   250,   228),
+  anio    = c(2014L, 2015L, 2016L, 2017L, 2018L, 2019L, 2020L, 2021L, 2022L, 2023L, 2024L),
+  muertes = c(277,   235,   254,   252,   257,   260,   254,   231,   226,   250,   228),
   tipo    = "Femicidios (CSJN)",
   sexo    = "Mujeres"
 )
@@ -666,20 +666,20 @@ footnote_fem <- paste0(
   "Analisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA"
 )
 
-# 12a. Four-category dodged bar: hom+ind+R99+femicidios, mujeres, 2017-2024
+# 12a. Four-category dodged bar: hom+ind+R99+femicidios, mujeres, 2014-2024
 hom_und_r99_fem <- bind_rows(
   hom_und_r99_labelled %>%
-    filter(sexo == "Mujeres", anio >= 2017L) %>%
+    filter(sexo == "Mujeres", anio >= 2014L) %>%
     mutate(tipo = as.character(tipo)),
   femicidios_csjn
 ) %>%
-  mutate(tipo = factor(tipo, levels = c("Homicidio",
+  mutate(tipo = factor(tipo, levels = c("Homicidios",
                                         "Intencion indeterminada",
                                         "R99 (causa mal definida)",
                                         "Femicidios (CSJN)")))
 
 tipo_colours_mujeres4 <- c(
-  "Homicidio"                = "#ad1457",
+  "Homicidios"                = "#ad1457",
   "Intencion indeterminada"  = "#f48fb1",
   "R99 (causa mal definida)" = "#546e7a",
   "Femicidios (CSJN)"        = "#e65100"
@@ -698,8 +698,8 @@ p_fem4 <- ggplot(hom_und_r99_fem,
   coord_cartesian(ylim = c(50, ymax4)) +
   scale_fill_manual(values = tipo_colours_mujeres4) +
   labs(
-    title    = "Homicidio + indeterminado + R99 + Femicidios - Mujeres",
-    subtitle = "Argentina 2017-2024 | Femicidios: CSJN; resto: DEIS CIE-10",
+    title    = "Homicidios + indeterminado + R99 + Femicidios - Mujeres",
+    subtitle = "Argentina 2014-2024 | Femicidios: CSJN; resto: DEIS CIE-10",
     x = "Año", y = "Numero de muertes (escala log)", fill = NULL,
     caption = footnote_fem
   ) +
@@ -710,21 +710,21 @@ p_fem4 <- ggplot(hom_und_r99_fem,
     plot.caption   = element_text(hjust = 0, size = 7)
   )
 
-ggsave("plots/homicidios_r99_fem_mujeres_2017_2024.png", p_fem4,
+ggsave("plots/homicidios_r99_fem_mujeres_2014_2024.png", p_fem4,
        width = 10, height = 5, dpi = 150)
-cat("Guardado: plots/homicidios_r99_fem_mujeres_2017_2024.png\n")
+cat("Guardado: plots/homicidios_r99_fem_mujeres_2014_2024.png\n")
 
-# 12b. Two-category comparison: Homicidio vs Femicidios, mujeres, 2017-2024
+# 12b. Two-category comparison: Homicidios vs Femicidios, mujeres, 2014-2024
 hom_vs_fem <- bind_rows(
   hom_und_r99_labelled %>%
-    filter(sexo == "Mujeres", anio >= 2017L, tipo == "Homicidio") %>%
+    filter(sexo == "Mujeres", anio >= 2014L, tipo == "Homicidios") %>%
     mutate(tipo = as.character(tipo)),
   femicidios_csjn
 ) %>%
-  mutate(tipo = factor(tipo, levels = c("Homicidio", "Femicidios (CSJN)")))
+  mutate(tipo = factor(tipo, levels = c("Homicidios", "Femicidios (CSJN)")))
 
 tipo_colours_hom_fem <- c(
-  "Homicidio"         = "#ad1457",
+  "Homicidios"         = "#ad1457",
   "Femicidios (CSJN)" = "#e65100"
 )
 
@@ -738,8 +738,8 @@ p_hom_fem <- ggplot(hom_vs_fem,
   scale_fill_manual(values = tipo_colours_hom_fem) +
   coord_cartesian(ylim = c(0, max(hom_vs_fem$muertes) * 1.35)) +
   labs(
-    title    = "Homicidios (DEIS) vs Femicidios (CSJN) - Mujeres, 2017-2024",
-    subtitle = "Homicidio: CIE-10 X85-Y09 | Femicidios: Registro Nacional CSJN",
+    title    = "Homicidios (DEIS) vs Femicidios (CSJN) - Mujeres, 2014-2024",
+    subtitle = "Homicidios: CIE-10 X85-Y09 | Femicidios: Registro Nacional CSJN",
     x = "Año", y = "Numero de muertes", fill = NULL,
     caption = footnote_fem
   ) +
@@ -750,9 +750,9 @@ p_hom_fem <- ggplot(hom_vs_fem,
     plot.caption   = element_text(hjust = 0, size = 7)
   )
 
-ggsave("plots/homicidios_vs_femicidios_mujeres_2017_2024.png", p_hom_fem,
+ggsave("plots/homicidios_vs_femicidios_mujeres_2014_2024.png", p_hom_fem,
        width = 8, height = 5, dpi = 150)
-cat("Guardado: plots/homicidios_vs_femicidios_mujeres_2017_2024.png\n")
+cat("Guardado: plots/homicidios_vs_femicidios_mujeres_2014_2024.png\n")
 
 # ── 13. Stacked bars: W (otros accidentes), X00-X59 (externas accidentales) ──
 is_v_cause   <- function(causa) grepl("^V", causa, perl = TRUE)
