@@ -72,26 +72,27 @@ read_defweb <- function(year) {
 
 raw <- bind_rows(lapply(2005:2023, read_defweb))
 
-# -- Load 2024 data from ZIP (defuncion2024.zip, full national coverage) ------
-# Schema: anio; jurisdiccion_de_residencia_id (int); jurisdicion_residencia_nombre;
-#         cie10_causa_id; cie10_clasificacion; sexo_id; Sexo; ...; cantidad
+# -- Load 2024 data from ZIP (base_def_24_men.zip, full national coverage) -----
+# Schema: region; jurisdiccion; mes_anio_defuncion; grupo_causa_defuncion_CIE10;
+#         mes_def; sexo_id; Sexo; grupo_etario; anio_def;
+#         cod_causa_muerte_CIE10; cantidad
 raw24 <- read_delim(
-  unz("defuncion2024.zip", "defuncion2024.csv"),
-  delim = ";",
+  unz("base_def_24_men.zip", "base_def_2024_mensual.csv"),
+  delim = ",",
   col_types = cols(.default = col_character()),
   locale = locale(encoding = "UTF-8"),
   show_col_types = FALSE
 ) %>%
-  rename(CAUSA = cie10_causa_id, CUENTA_chr = cantidad) %>%
+  rename(CAUSA = cod_causa_muerte_CIE10, CUENTA_chr = cantidad) %>%
   mutate(
     CUENTA    = as.double(CUENTA_chr),
     anio      = 2024L,
     sexo      = case_when(
-      grepl("mascul|varon", Sexo, ignore.case = TRUE) ~ "Varones",
-      grepl("femen|mujer",  Sexo, ignore.case = TRUE) ~ "Mujeres",
+      grepl("mascul", Sexo, ignore.case = TRUE) ~ "Varones",
+      grepl("femen",  Sexo, ignore.case = TRUE) ~ "Mujeres",
       TRUE ~ "Indeterminado"
     ),
-    prov_code = sprintf("%02d", suppressWarnings(as.integer(jurisdiccion_de_residencia_id))),
+    prov_code = sprintf("%02d", suppressWarnings(as.integer(sub("^(\\d+)\\..*", "\\1", jurisdiccion)))),
     provincia = coalesce(prov_map[prov_code], paste0("Prov.", prov_code))
   )
 
@@ -137,14 +138,14 @@ p1 <- ggplot(
   scale_colour_manual(values = c("Varones" = "#2166ac", "Mujeres" = "#d6604d")) +
   labs(
     title  = "Muertes por homicidio en Argentina (2005-2024)",
-    x      = "Anio", y = "Numero de muertes",
+    x      = "Año", y = "Numero de muertes",
     colour = "Sexo", caption = footnote
   ) +
   theme_bw(base_size = 12) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         plot.caption = element_text(hjust = 0, size = 7))
 
-ggsave("plots/homicidios_por_anio_sexo.png", p1, width = 10, height = 5, dpi = 150)
+ggsave("plots/homicidios_por_anio_sexo.png", p1, width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_por_anio_sexo.png\n")
 
 #  2. Matrix: province  year (total, both sexes) 
@@ -209,14 +210,14 @@ p2 <- ggplot(
   scale_fill_viridis_c(option = "magma", direction = -1, name = "Muertes") +
   scale_x_continuous(breaks = 2005:2024) +
   labs(
-    title = "Homicidios por provincia y anio - Argentina (2005-2024)",
+    title = "Homicidios por provincia y año - Argentina (2005-2024)",
     x = "Año", y = NULL, caption = footnote
   ) +
   theme_bw(base_size = 10) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         plot.caption = element_text(hjust = 0, size = 7))
 
-ggsave("plots/homicidios_heatmap_provincia_anio.png", p2, width = 14, height = 8, dpi = 150)
+ggsave("plots/homicidios_heatmap_provincia_anio.png", p2, width = 14, height = 10.5, dpi = 150)
 cat("Guardado: plots/homicidios_heatmap_provincia_anio.png\n")
 
 #  6. Sex ratio (male/female) by year 
@@ -281,7 +282,7 @@ p_varA <- ggplot(
         plot.caption = element_text(hjust = 0, size = 7))
 
 ggsave("plots/homicidios_varA_mas_indeterminado.png", p_varA,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_varA_mas_indeterminado.png\n")
 
 # ── 8. Variant B: homicides 2005-2024 (full observed, defuncion2024.zip) ─────
@@ -309,7 +310,7 @@ p_varB <- ggplot(by_year_sex_varB,
         plot.caption = element_text(hjust = 0, size = 7))
 
 ggsave("plots/homicidios_varB_2024_completo.png", p_varB,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_varB_2024_completo.png\n")
 
 # ── 9. Variant C: homicides + undetermined, 2024 fully observed ──────────────
@@ -337,7 +338,7 @@ p_varC <- ggplot(by_year_sex_varC,
         plot.caption = element_text(hjust = 0, size = 7))
 
 ggsave("plots/homicidios_varC_indeterminado.png", p_varC,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_varC_indeterminado.png\n")
 
 # ── 9c. Stacked barcharts: homicidio vs indeterminado, by sex ────────────────
@@ -396,12 +397,12 @@ make_stacked_bar <- function(data, sexo_sel, title_suffix, colours) {
 
 p_stack_varones <- make_stacked_bar(hom_und_labelled, "Varones", "Varones", tipo_colours_varones)
 ggsave("plots/homicidios_stacked_varones.png", p_stack_varones,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_stacked_varones.png\n")
 
 p_stack_mujeres <- make_stacked_bar(hom_und_labelled, "Mujeres", "Mujeres", tipo_colours_mujeres)
 ggsave("plots/homicidios_stacked_mujeres.png", p_stack_mujeres,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_stacked_mujeres.png\n")
 
 # ── 9b. Matrices: province × year for homicidio+indeterminado ────────────────
@@ -500,7 +501,7 @@ p_varC_prov <- ggplot(mapping = aes(x = anio, y = muertes,
   )
 
 ggsave("plots/homicidios_varC_mujeres_por_provincia.png", p_varC_prov,
-       width = 14, height = 7, dpi = 150)
+       width = 14, height = 10.5, dpi = 150)
 cat("Guardado: plots/homicidios_varC_mujeres_por_provincia.png\n")
 
 # ── 11. R99 (causa mal definida) analysis ────────────────────────────────────
@@ -577,8 +578,76 @@ p_r99 <- ggplot(by_year_sex_r99,
   theme(axis.text.x = element_text(angle = 45, hjust = 1),
         plot.caption = element_text(hjust = 0, size = 7))
 
-ggsave("plots/r99_por_anio_sexo.png", p_r99, width = 10, height = 5, dpi = 150)
+ggsave("plots/r99_por_anio_sexo.png", p_r99, width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/r99_por_anio_sexo.png\n")
+
+# ── 11b. Homicidios + 3% Y10-Y34 + 0,5% R99 imputados como homicidio ─────────
+undet_0523 <- raw %>%
+  filter(is_undetermined(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    )
+  ) %>%
+  select(anio, sexo, CUENTA)
+
+undet_24 <- raw24 %>%
+  filter(is_undetermined(CAUSA)) %>%
+  select(anio, sexo, CUENTA)
+
+by_year_sex_undet <- bind_rows(undet_0523, undet_24) %>%
+  group_by(anio, sexo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop")
+
+by_year_sex_undet_3pct <- by_year_sex_undet %>%
+  mutate(muertes = round(muertes * 0.03)) %>%
+  rename(undet_imputados = muertes)
+
+by_year_sex_r99_05pct <- by_year_sex_r99 %>%
+  mutate(muertes = round(muertes * 0.005)) %>%
+  rename(r99_imputados = muertes)
+
+by_year_sex_imputado <- by_year_sex %>%
+  filter(sexo %in% c("Varones", "Mujeres")) %>%
+  left_join(by_year_sex_undet_3pct, by = c("anio", "sexo")) %>%
+  left_join(by_year_sex_r99_05pct, by = c("anio", "sexo")) %>%
+  replace_na(list(undet_imputados = 0, r99_imputados = 0)) %>%
+  mutate(muertes = muertes + undet_imputados + r99_imputados) %>%
+  select(anio, sexo, muertes)
+
+cat("\n=== Homicidios + 3% Y10-Y34 + 0,5% R99 imputados como homicidio ===\n")
+print(by_year_sex_imputado %>% pivot_wider(names_from = sexo, values_from = muertes, values_fill = 0))
+
+footnote_imput <- paste0(
+  "Datos del Ministerio de Salud Argentina - DEIS.\n",
+  "Codigos CIE-10: homicidio X85-Y09, intencion indeterminada Y10-Y34, causa mal definida R99.\n",
+  "Se imputa el 3% de las muertes Y10-Y34 y el 0,5% de las muertes R99 como homicidio para cada sexo y año.\n",
+  "Analisis por Rodrigo Quiroga. Ver github.com/rquiroga7/suicidios_0-20-ARGENTINA"
+)
+
+p_imput <- ggplot(
+  by_year_sex_imputado,
+  aes(x = anio, y = muertes, colour = sexo, group = sexo)
+) +
+  geom_line(linewidth = 1) +
+  geom_point(size = 2) +
+  scale_x_continuous(breaks = 2005:2024) +
+  scale_colour_manual(values = c("Varones" = "#2166ac", "Mujeres" = "#d6604d")) +
+  labs(
+    title    = "Muertes por homicidio en Argentina (2005-2024)",
+    subtitle = "Homicidios + 3% de Y10-Y34 + 0,5% de R99 imputados como homicidio",
+    x = "Año", y = "Numero de muertes",
+    colour = "Sexo", caption = footnote_imput
+  ) +
+  theme_bw(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
+        plot.caption = element_text(hjust = 0, size = 7))
+
+ggsave("plots/homicidios_mas_imput_por_anio_sexo.png", p_imput,
+       width = 10, height = 7.5, dpi = 150)
+cat("Guardado: plots/homicidios_mas_imput_por_anio_sexo.png\n")
 
 # Stacked bars: homicidio + indeterminada + R99
 r99_labelled_0523 <- raw %>%
@@ -644,13 +713,145 @@ make_stacked_bar3 <- function(data, sexo_sel, title_suffix, colours) {
 
 p_stack3_varones <- make_stacked_bar3(hom_und_r99_labelled, "Varones", "Varones", tipo_colours_varones3)
 ggsave("plots/homicidios_r99_stacked_varones.png", p_stack3_varones,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_r99_stacked_varones.png\n")
 
 p_stack3_mujeres <- make_stacked_bar3(hom_und_r99_labelled, "Mujeres", "Mujeres", tipo_colours_mujeres3)
 ggsave("plots/homicidios_r99_stacked_mujeres.png", p_stack3_mujeres,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_r99_stacked_mujeres.png\n")
+
+# ── 11d. Stacked bars: homicidio + Y20-Y34 + R99, mujeres ─────────────────────
+is_undetermined_y20_y34 <- function(causa) {
+  grepl("^Y(2[0-9]|3[0-4])$", causa, perl = TRUE)
+}
+
+hom_y20y34_labelled_0523 <- raw %>%
+  filter(is_homicide(CAUSA) | is_undetermined_y20_y34(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    ),
+    tipo = if_else(is_homicide(CAUSA), "Homicidios", "Y20-Y34")
+  ) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+hom_y20y34_labelled_24 <- raw24 %>%
+  filter(is_homicide(CAUSA) | is_undetermined_y20_y34(CAUSA)) %>%
+  mutate(tipo = if_else(is_homicide(CAUSA), "Homicidios", "Y20-Y34")) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+hom_y20y34_r99_labelled <- bind_rows(hom_y20y34_labelled_0523, hom_y20y34_labelled_24,
+                                     r99_labelled_0523, r99_labelled_24) %>%
+  filter(sexo %in% c("Varones", "Mujeres")) %>%
+  group_by(anio, sexo, tipo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
+  mutate(tipo = factor(tipo, levels = c("Homicidios", "Y20-Y34", "R99 (causa mal definida)")))
+
+tipo_colours_mujeres_y20y34 <- c("Homicidios"                = "#ad1457",
+                                 "Y20-Y34"                   = "#f48fb1",
+                                 "R99 (causa mal definida)" = "#546e7a")
+
+make_stacked_bar_y20y34 <- function(data, sexo_sel, title_suffix, colours) {
+  d <- data %>% filter(sexo == sexo_sel) %>%
+    arrange(anio, tipo)
+
+  ymax <- max(d$muertes, na.rm = TRUE) * 4
+
+  ggplot(d, aes(x = factor(anio), y = muertes, fill = tipo)) +
+    geom_col(width = 0.8, position = position_dodge(width = 0.85)) +
+    geom_text(aes(label = muertes),
+              position = position_dodge(width = 0.85),
+              angle = 90, hjust = -0.1, vjust = 0.5,
+              fontface = "bold", colour = "black", size = 2.8) +
+    scale_y_log10(labels = scales::comma_format(accuracy = 1)) +
+    coord_cartesian(ylim = c(50, ymax)) +
+    scale_fill_manual(values = colours) +
+    labs(
+      title = paste("Homicidios + Y20-Y34 + R99 -", title_suffix),
+      subtitle = "X85-Y09 (homicidio) + Y20-Y34 (intencion indeterminada) + R99 (causa mal definida), Argentina 2005-2024",
+      x = "Año", y = "Numero de muertes (escala log)", fill = NULL, caption = footnote
+    ) +
+    theme_bw(base_size = 12) +
+    theme(
+      axis.text.x  = element_text(angle = 45, hjust = 1),
+      legend.position = "top",
+      plot.caption = element_text(hjust = 0, size = 7)
+    )
+}
+
+p_stack_y20y34_mujeres <- make_stacked_bar_y20y34(hom_y20y34_r99_labelled, "Mujeres", "Mujeres", tipo_colours_mujeres_y20y34)
+ggsave("plots/homicidios_r99_stacked_mujeres_y20y34.png", p_stack_y20y34_mujeres,
+       width = 10, height = 7.5, dpi = 150)
+cat("Guardado: plots/homicidios_r99_stacked_mujeres_y20y34.png\n")
+
+# ── 11e. Stacked bars: homicidio + Y20-Y25/Y28-Y30 + R99, mujeres ─────────────
+is_undetermined_sel <- function(causa) {
+  grepl("^Y(2[0-5]|28|29|30)$", causa, perl = TRUE)
+}
+
+hom_sel_labelled_0523 <- raw %>%
+  filter(is_homicide(CAUSA) | is_undetermined_sel(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    ),
+    tipo = if_else(is_homicide(CAUSA), "Homicidios", "Y20-Y25/Y28-Y30")
+  ) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+hom_sel_labelled_24 <- raw24 %>%
+  filter(is_homicide(CAUSA) | is_undetermined_sel(CAUSA)) %>%
+  mutate(tipo = if_else(is_homicide(CAUSA), "Homicidios", "Y20-Y25/Y28-Y30")) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+hom_sel_r99_labelled <- bind_rows(hom_sel_labelled_0523, hom_sel_labelled_24,
+                                  r99_labelled_0523, r99_labelled_24) %>%
+  filter(sexo %in% c("Varones", "Mujeres")) %>%
+  group_by(anio, sexo, tipo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
+  mutate(tipo = factor(tipo, levels = c("Homicidios", "Y20-Y25/Y28-Y30", "R99 (causa mal definida)")))
+
+tipo_colours_mujeres_sel <- c("Homicidios"                = "#ad1457",
+                              "Y20-Y25/Y28-Y30"           = "#f48fb1",
+                              "R99 (causa mal definida)" = "#546e7a")
+
+make_stacked_bar_sel <- function(data, sexo_sel, title_suffix, colours) {
+  d <- data %>% filter(sexo == sexo_sel) %>%
+    arrange(anio, tipo)
+
+  ymax <- max(d$muertes, na.rm = TRUE) * 4
+
+  ggplot(d, aes(x = factor(anio), y = muertes, fill = tipo)) +
+    geom_col(width = 0.8, position = position_dodge(width = 0.85)) +
+    geom_text(aes(label = muertes),
+              position = position_dodge(width = 0.85),
+              angle = 90, hjust = -0.1, vjust = 0.5,
+              fontface = "bold", colour = "black", size = 2.8) +
+    scale_y_log10(labels = scales::comma_format(accuracy = 1)) +
+    coord_cartesian(ylim = c(50, ymax)) +
+    scale_fill_manual(values = colours) +
+    labs(
+      title = paste("Homicidios + Y20-Y25/Y28-Y30 + R99 -", title_suffix),
+      subtitle = "X85-Y09 (homicidio) + Y20-Y25/Y28-Y30 (intencion indeterminada) + R99 (causa mal definida), Argentina 2005-2024",
+      x = "Año", y = "Numero de muertes (escala log)", fill = NULL, caption = footnote
+    ) +
+    theme_bw(base_size = 12) +
+    theme(
+      axis.text.x  = element_text(angle = 45, hjust = 1),
+      legend.position = "top",
+      plot.caption = element_text(hjust = 0, size = 7)
+    )
+}
+
+p_stack_sel_mujeres <- make_stacked_bar_sel(hom_sel_r99_labelled, "Mujeres", "Mujeres", tipo_colours_mujeres_sel)
+ggsave("plots/homicidios_r99_stacked_mujeres_y20y25_y28y30.png", p_stack_sel_mujeres,
+       width = 10, height = 7.5, dpi = 150)
+cat("Guardado: plots/homicidios_r99_stacked_mujeres_y20y25_y28y30.png\n")
 
 # ── 12. Femicidios comparison plots ──────────────────────────────────────────
 femicidios_csjn <- tibble(
@@ -711,7 +912,7 @@ p_fem4 <- ggplot(hom_und_r99_fem,
   )
 
 ggsave("plots/homicidios_r99_fem_mujeres_2014_2024.png", p_fem4,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/homicidios_r99_fem_mujeres_2014_2024.png\n")
 
 # 12b. Two-category comparison: Homicidios vs Femicidios, mujeres, 2014-2024
@@ -751,7 +952,7 @@ p_hom_fem <- ggplot(hom_vs_fem,
   )
 
 ggsave("plots/homicidios_vs_femicidios_mujeres_2014_2024.png", p_hom_fem,
-       width = 8, height = 5, dpi = 150)
+       width = 8, height = 6, dpi = 150)
 cat("Guardado: plots/homicidios_vs_femicidios_mujeres_2014_2024.png\n")
 
 # ── 13. Stacked bars: W (otros accidentes), X00-X59 (externas accidentales) ──
@@ -831,12 +1032,12 @@ make_stacked_bar_vwx <- function(data, sexo_sel, title_suffix, colours) {
 
 p_vwx_varones <- make_stacked_bar_vwx(vwx_labelled, "Varones", "Varones", tipo_colours_vwx_varones)
 ggsave("plots/causas_vwx_stacked_varones.png", p_vwx_varones,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/causas_vwx_stacked_varones.png\n")
 
 p_vwx_mujeres <- make_stacked_bar_vwx(vwx_labelled, "Mujeres", "Mujeres", tipo_colours_vwx_mujeres)
 ggsave("plots/causas_vwx_stacked_mujeres.png", p_vwx_mujeres,
-       width = 10, height = 5, dpi = 150)
+       width = 10, height = 7.5, dpi = 150)
 cat("Guardado: plots/causas_vwx_stacked_mujeres.png\n")
 
 # ── 15. Top-5 W and X00-X59 causes of death 2021-2024 ────────────────────────
@@ -935,3 +1136,372 @@ cat("\n=== Mujeres W+X00-X59: 2024 vs promedio 2021-2023 (por causa) ===\n")
 print(wx_causa_table, n=30)
 write_csv(wx_causa_table, "outputs/wx_causas_mujeres_2024_vs_2123.csv")
 cat("Guardado: outputs/wx_causas_mujeres_2024_vs_2123.csv\n")
+
+# ── Mujeres 2024 vs 2021-2023: por causa Y20-Y34 (sin desagregacion por edad) ──
+is_undetermined_y20_y34 <- function(causa) {
+  grepl("^Y(2[0-9]|3[0-4])$", causa, perl = TRUE)
+}
+
+y_detail_mujeres <- bind_rows(
+  raw %>%
+    filter(is_undetermined_y20_y34(CAUSA), SEXO == "2", anio >= 2021L) %>%
+    select(anio, CAUSA, CUENTA),
+  raw24 %>%
+    filter(is_undetermined_y20_y34(CAUSA), sexo == "Mujeres") %>%
+    select(anio, CAUSA, CUENTA)
+)
+
+avg_2123_y <- y_detail_mujeres %>%
+  filter(anio %in% 2021:2023) %>%
+  group_by(anio, CAUSA) %>%
+  summarise(muertes = sum(CUENTA, na.rm=TRUE), .groups="drop") %>%
+  group_by(CAUSA) %>%
+  summarise(avg_2021_2023 = round(mean(muertes, na.rm=TRUE), 1), .groups="drop")
+
+y_yearly_causa <- y_detail_mujeres %>%
+  group_by(anio, CAUSA) %>%
+  summarise(muertes = sum(CUENTA, na.rm=TRUE), .groups="drop") %>%
+  pivot_wider(names_from=anio, values_from=muertes, values_fill=0, names_prefix="anio_")
+
+d2024_y <- y_detail_mujeres %>%
+  filter(anio == 2024) %>%
+  group_by(CAUSA) %>%
+  summarise(muertes_2024 = sum(CUENTA, na.rm=TRUE), .groups="drop")
+
+y_causa_table <- avg_2123_y %>%
+  full_join(d2024_y, by="CAUSA") %>%
+  replace_na(list(avg_2021_2023=0, muertes_2024=0)) %>%
+  mutate(
+    delta      = round(muertes_2024 - avg_2021_2023, 1),
+    pct_change = ifelse(avg_2021_2023 > 3, round(100*delta/avg_2021_2023), NA_real_)
+  ) %>%
+  left_join(causa_nombres, by="CAUSA") %>%
+  left_join(y_yearly_causa, by="CAUSA") %>%
+  arrange(desc(delta)) %>%
+  select(CAUSA, nombre, avg_2021_2023, any_of(c("anio_2021","anio_2022","anio_2023","anio_2024")), delta, pct_change)
+
+cat("\n=== Mujeres Y20-Y34: 2024 vs promedio 2021-2023 (por causa) ===\n")
+print(y_causa_table, n=30)
+write_csv(y_causa_table, "outputs/y_causas_mujeres_2024_vs_2123.csv")
+cat("Guardado: outputs/y_causas_mujeres_2024_vs_2123.csv\n")
+
+# ── Cuartiles de edad por anio: homicidios, Y20-Y25/Y28-Y30, R99 (mujeres) ────
+age_midpoint_0523 <- function(grupedad) {
+  grupedad <- iconv(grupedad, from = "latin1", to = "UTF-8")
+  code <- sub("^(\\d+)_.*", "\\1", grupedad)
+  case_when(
+    code == "01" ~ 0.5,
+    code == "02" ~ 5,
+    code == "03" ~ 12,
+    code == "04" ~ 17,
+    code == "05" ~ 22,
+    code == "06" ~ 27,
+    code == "07" ~ 32,
+    code == "08" ~ 37,
+    code == "09" ~ 42,
+    code == "10" ~ 47,
+    code == "11" ~ 52,
+    code == "12" ~ 57,
+    code == "13" ~ 62,
+    code == "14" ~ 67,
+    code == "15" ~ 72,
+    code == "16" ~ 77,
+    code == "17" ~ 85,
+    TRUE ~ NA_real_
+  )
+}
+
+age_midpoint_24 <- function(grupo_etario) {
+  case_when(
+    grepl("01", grupo_etario) ~ 10,
+    grepl("02", grupo_etario) ~ 30,
+    grepl("03", grupo_etario) ~ 45,
+    grepl("04", grupo_etario) ~ 55,
+    grepl("05", grupo_etario) ~ 65,
+    grepl("06", grupo_etario) ~ 75,
+    grepl("07", grupo_etario) ~ 85,
+    TRUE ~ NA_real_
+  )
+}
+
+compute_quartiles <- function(data, categoria) {
+  data %>%
+    filter(!is.na(edad), CUENTA > 0) %>%
+    group_by(anio) %>%
+    summarise(
+      n  = sum(CUENTA),
+      Q1 = round(quantile(rep(edad, CUENTA), probs = 0.25, na.rm = TRUE), 1),
+      Q2 = round(quantile(rep(edad, CUENTA), probs = 0.50, na.rm = TRUE), 1),
+      Q3 = round(quantile(rep(edad, CUENTA), probs = 0.75, na.rm = TRUE), 1),
+      .groups = "drop"
+    ) %>%
+    mutate(categoria = categoria) %>%
+    select(anio, categoria, n, Q1, Q2, Q3)
+}
+
+hom_edad_0523 <- raw %>%
+  filter(is_homicide(CAUSA), SEXO == "2") %>%
+  mutate(edad = age_midpoint_0523(GRUPEDAD)) %>%
+  select(anio, edad, CUENTA)
+
+hom_edad_24 <- raw24 %>%
+  filter(is_homicide(CAUSA), sexo == "Mujeres") %>%
+  mutate(edad = age_midpoint_24(grupo_etario)) %>%
+  select(anio, edad, CUENTA)
+
+hom_edad <- bind_rows(hom_edad_0523, hom_edad_24)
+
+y_sel_0523 <- raw %>%
+  filter(is_undetermined_sel(CAUSA), SEXO == "2") %>%
+  mutate(edad = age_midpoint_0523(GRUPEDAD)) %>%
+  select(anio, edad, CUENTA)
+
+y_sel_24 <- raw24 %>%
+  filter(is_undetermined_sel(CAUSA), sexo == "Mujeres") %>%
+  mutate(edad = age_midpoint_24(grupo_etario)) %>%
+  select(anio, edad, CUENTA)
+
+y_sel <- bind_rows(y_sel_0523, y_sel_24)
+
+r99_edad_0523 <- raw %>%
+  filter(is_r99(CAUSA), SEXO == "2") %>%
+  mutate(edad = age_midpoint_0523(GRUPEDAD)) %>%
+  select(anio, edad, CUENTA)
+
+r99_edad_24 <- raw24 %>%
+  filter(is_r99(CAUSA), sexo == "Mujeres") %>%
+  mutate(edad = age_midpoint_24(grupo_etario)) %>%
+  select(anio, edad, CUENTA)
+
+r99_edad <- bind_rows(r99_edad_0523, r99_edad_24)
+
+quartiles_table <- bind_rows(
+  compute_quartiles(hom_edad, "Homicidios"),
+  compute_quartiles(y_sel,  "Y20-Y25/Y28-Y30"),
+  compute_quartiles(r99_edad, "R99")
+) %>%
+  arrange(categoria, anio)
+
+cat("\n=== Cuartiles de edad por anio (mujeres) ===\n")
+print(quartiles_table, n = Inf)
+write_csv(quartiles_table, "outputs/cuartiles_edad_mujeres_por_anio.csv")
+cat("Guardado: outputs/cuartiles_edad_mujeres_por_anio.csv\n")
+
+# ── R99: muertes menores de 50 anios, por anio y sexo ─────────────────────────
+r99_menor50_0523 <- raw %>%
+  filter(is_r99(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    ),
+    grupo_cod = sub("^(\\d+)_.*", "\\1", iconv(GRUPEDAD, from = "latin1", to = "UTF-8"))
+  ) %>%
+  filter(grupo_cod %in% sprintf("%02d", 1:10)) %>%
+  group_by(anio, sexo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop")
+
+r99_menor50_24 <- raw24 %>%
+  filter(is_r99(CAUSA)) %>%
+  filter(grepl("^0[123]\\.", grupo_etario)) %>%
+  group_by(anio, sexo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop")
+
+r99_menor50 <- bind_rows(r99_menor50_0523, r99_menor50_24) %>%
+  group_by(anio, sexo) %>%
+  summarise(muertes = sum(muertes, na.rm = TRUE), .groups = "drop") %>%
+  pivot_wider(names_from = sexo, values_from = muertes, values_fill = 0) %>%
+  mutate(Total = Mujeres + Varones + Indeterminado) %>%
+  select(anio, Varones, Mujeres, Indeterminado, Total) %>%
+  arrange(anio)
+
+cat("\n=== R99: muertes <50 anios por anio y sexo ===\n")
+print(r99_menor50, n = Inf)
+write_csv(r99_menor50, "outputs/r99_menor50_por_anio.csv")
+cat("Guardado: outputs/r99_menor50_por_anio.csv\n")
+
+# ── Muertes por categoria, edad y anio (mujeres) ──────────────────────────────
+age_bracket_0523 <- function(grupedad) {
+  code <- sub("^(\\d+)_.*", "\\1", iconv(grupedad, from = "latin1", to = "UTF-8"))
+  case_when(
+    code %in% c("01", "02", "03", "04") ~ "0-19",
+    code %in% c("05", "06", "07", "08") ~ "20-39",
+    code %in% c("09", "10")             ~ "40-49",
+    code %in% c("11", "12")             ~ "50-59",
+    code %in% c("13", "14")             ~ "60-69",
+    code %in% c("15", "16")             ~ "70-79",
+    code == "17"                        ~ "80+",
+    TRUE                                ~ NA_character_
+  )
+}
+
+age_bracket_24 <- function(grupo_etario) {
+  case_when(
+    grepl("^01\\.", grupo_etario) ~ "0-19",
+    grepl("^02\\.", grupo_etario) ~ "20-39",
+    grepl("^03\\.", grupo_etario) ~ "40-49",
+    grepl("^04\\.", grupo_etario) ~ "50-59",
+    grepl("^05\\.", grupo_etario) ~ "60-69",
+    grepl("^06\\.", grupo_etario) ~ "70-79",
+    grepl("^07\\.", grupo_etario) ~ "80+",
+    TRUE                          ~ NA_character_
+  )
+}
+
+age_brackets <- c("0-19", "20-39", "40-49", "50-59", "60-69", "70-79", "80+")
+
+build_bracket_table <- function(data_0523, data_24, categoria) {
+  d_0523 <- data_0523 %>%
+    mutate(edad_bracket = age_bracket_0523(GRUPEDAD)) %>%
+    filter(!is.na(edad_bracket)) %>%
+    group_by(anio, edad_bracket) %>%
+    summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop")
+
+  d_24 <- data_24 %>%
+    mutate(edad_bracket = age_bracket_24(grupo_etario)) %>%
+    filter(!is.na(edad_bracket)) %>%
+    group_by(anio, edad_bracket) %>%
+    summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop")
+
+  bind_rows(d_0523, d_24) %>%
+    group_by(anio, edad_bracket) %>%
+    summarise(muertes = sum(muertes, na.rm = TRUE), .groups = "drop") %>%
+    complete(anio = 2005:2024, edad_bracket = age_brackets, fill = list(muertes = 0)) %>%
+    mutate(categoria = categoria) %>%
+    select(anio, categoria, edad_bracket, muertes)
+}
+
+hom_bracket_0523 <- raw %>%
+  filter(is_homicide(CAUSA), SEXO == "2") %>%
+  select(anio, GRUPEDAD, CUENTA)
+
+hom_bracket_24 <- raw24 %>%
+  filter(is_homicide(CAUSA), sexo == "Mujeres") %>%
+  select(anio, grupo_etario, CUENTA)
+
+y_sel_bracket_0523 <- raw %>%
+  filter(is_undetermined_sel(CAUSA), SEXO == "2") %>%
+  select(anio, GRUPEDAD, CUENTA)
+
+y_sel_bracket_24 <- raw24 %>%
+  filter(is_undetermined_sel(CAUSA), sexo == "Mujeres") %>%
+  select(anio, grupo_etario, CUENTA)
+
+r99_bracket_0523 <- raw %>%
+  filter(is_r99(CAUSA), SEXO == "2") %>%
+  select(anio, GRUPEDAD, CUENTA)
+
+r99_bracket_24 <- raw24 %>%
+  filter(is_r99(CAUSA), sexo == "Mujeres") %>%
+  select(anio, grupo_etario, CUENTA)
+
+bracket_table <- bind_rows(
+  build_bracket_table(hom_bracket_0523, hom_bracket_24,     "Homicidios"),
+  build_bracket_table(y_sel_bracket_0523, y_sel_bracket_24, "Y20-Y25/Y28-Y30"),
+  build_bracket_table(r99_bracket_0523, r99_bracket_24,     "R99")
+) %>%
+  mutate(edad_bracket = factor(edad_bracket, levels = age_brackets)) %>%
+  arrange(categoria, anio, edad_bracket)
+
+cat("\n=== Muertes por categoria, edad y anio (mujeres) ===\n")
+print(bracket_table, n = Inf)
+write_csv(bracket_table, "outputs/muertes_por_edad_anio_mujeres.csv")
+cat("Guardado: outputs/muertes_por_edad_anio_mujeres.csv\n")
+
+bracket_table_wide <- bracket_table %>%
+  pivot_wider(names_from = edad_bracket, values_from = muertes) %>%
+  select(anio, categoria, all_of(age_brackets))
+
+cat("\n=== Muertes por categoria y anio (formato ancho, mujeres) ===\n")
+print(bracket_table_wide, n = Inf)
+write_csv(bracket_table_wide, "outputs/muertes_por_edad_anio_mujeres_wide.csv")
+cat("Guardado: outputs/muertes_por_edad_anio_mujeres_wide.csv\n")
+
+# ── Stacked bars: homicidio + Y20-Y34 + R99, mujeres 0-59 anios ────────────────
+hom_y20y34_0_59_labelled_0523 <- raw %>%
+  filter(is_homicide(CAUSA) | is_undetermined(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    ),
+    grupo_cod = sub("^(\\d+)_.*", "\\1", iconv(GRUPEDAD, from = "latin1", to = "UTF-8")),
+    tipo = if_else(is_homicide(CAUSA), "Homicidios", "Intencion indeterminada")
+  ) %>%
+  filter(sexo == "Mujeres", grupo_cod %in% sprintf("%02d", 1:12)) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+hom_y20y34_0_59_labelled_24 <- raw24 %>%
+  filter(is_homicide(CAUSA) | is_undetermined(CAUSA)) %>%
+  filter(sexo == "Mujeres", grepl("^0[1-4]\\.", grupo_etario)) %>%
+  mutate(tipo = if_else(is_homicide(CAUSA), "Homicidios", "Intencion indeterminada")) %>%
+  select(anio, sexo, tipo, CUENTA)
+
+r99_0_59_labelled_0523 <- raw %>%
+  filter(is_r99(CAUSA)) %>%
+  mutate(
+    sexo = case_when(
+      SEXO == "1" ~ "Varones",
+      SEXO == "2" ~ "Mujeres",
+      TRUE        ~ "Indeterminado"
+    ),
+    grupo_cod = sub("^(\\d+)_.*", "\\1", iconv(GRUPEDAD, from = "latin1", to = "UTF-8"))
+  ) %>%
+  filter(sexo == "Mujeres", grupo_cod %in% sprintf("%02d", 1:12)) %>%
+  mutate(tipo = "R99 (causa mal definida)") %>%
+  select(anio, sexo, tipo, CUENTA)
+
+r99_0_59_labelled_24 <- raw24 %>%
+  filter(is_r99(CAUSA)) %>%
+  filter(sexo == "Mujeres", grepl("^0[1-4]\\.", grupo_etario)) %>%
+  mutate(tipo = "R99 (causa mal definida)") %>%
+  select(anio, sexo, tipo, CUENTA)
+
+hom_und_r99_0_59_labelled <- bind_rows(
+  hom_y20y34_0_59_labelled_0523, hom_y20y34_0_59_labelled_24,
+  r99_0_59_labelled_0523, r99_0_59_labelled_24
+) %>%
+  group_by(anio, tipo) %>%
+  summarise(muertes = sum(CUENTA, na.rm = TRUE), .groups = "drop") %>%
+  mutate(tipo = factor(tipo, levels = c("Homicidios",
+                                        "Intencion indeterminada",
+                                        "R99 (causa mal definida)")))
+
+make_stacked_bar_0_59 <- function(data, title_suffix, colours) {
+  d <- data %>% arrange(anio, tipo)
+  ymax <- max(d$muertes, na.rm = TRUE) * 4
+
+  ggplot(d, aes(x = factor(anio), y = muertes, fill = tipo)) +
+    geom_col(width = 0.8, position = position_dodge(width = 0.85)) +
+    geom_text(aes(label = muertes),
+              position = position_dodge(width = 0.85),
+              angle = 90, hjust = -0.1, vjust = 0.5,
+              fontface = "bold", colour = "black", size = 2.8) +
+    scale_y_log10(labels = scales::comma_format(accuracy = 1)) +
+    coord_cartesian(ylim = c(50, ymax)) +
+    scale_fill_manual(values = colours) +
+    labs(
+      title = paste("Homicidios + Y20-Y34 + R99 -", title_suffix),
+      subtitle = "X85-Y09 (homicidio) + Y20-Y34 (intencion indeterminada) + R99 (causa mal definida), 0-59 años, Argentina 2005-2024",
+      x = "Año", y = "Numero de muertes (escala log)", fill = NULL, caption = footnote
+    ) +
+    theme_bw(base_size = 12) +
+    theme(
+      axis.text.x  = element_text(angle = 45, hjust = 1),
+      legend.position = "top",
+      plot.caption = element_text(hjust = 0, size = 7)
+    )
+}
+
+tipo_colours_mujeres3_0_59 <- c("Homicidios"                = "#ad1457",
+                                "Intencion indeterminada"  = "#f48fb1",
+                                "R99 (causa mal definida)" = "#546e7a")
+
+p_stack_0_59_mujeres <- make_stacked_bar_0_59(hom_und_r99_0_59_labelled,
+                                               "Mujeres 0-59 años",
+                                               tipo_colours_mujeres3_0_59)
+ggsave("plots/homicidios_r99_stacked_mujeres_0_59.png", p_stack_0_59_mujeres,
+       width = 10, height = 7.5, dpi = 150)
+cat("Guardado: plots/homicidios_r99_stacked_mujeres_0_59.png\n")

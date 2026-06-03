@@ -1,0 +1,15 @@
+CAUSA,nombre,avg_2021_2023,anio_2021,anio_2022,anio_2023,anio_2024,delta,pct_change
+Y34,Evento no especificado de intención no determinada,400,384,415,401,413,13,3
+Y28,Contacto traumático con objeto cortante de intención no determinada,22.3,23,20,24,28,5.7,26
+Y21,Ahogamiento y sumersión de intención no determinada,27.3,29,33,20,32,4.7,17
+Y30,Caída salto o empujón desde lugar elevado de intención no determinada,8.3,13,5,7,12,3.7,45
+Y31,Caída permanencia o carrera delante o hacia objeto en movimiento de intención no determinada,20,18,16,26,22,2,10
+Y29,Contacto traumático con objeto romo o sin filo de intención no determinada,1,0,0,1,1,0,NA
+Y22,Disparo de arma corta de intención no determinada,2,0,0,2,1,-1,NA
+Y23,Disparo de rifle escopeta y arma larga de intención no determinada,1,1,1,0,0,-1,NA
+Y25,Contacto traumático con material explosivo de intención no determinada,1,0,0,1,0,-1,NA
+Y27,Contacto con vapor de agua vapores y objetos calientes de intención no determinada,1,1,0,1,0,-1,NA
+Y24,Disparo de otras armas de fuego y las no especificadas de intención no determinada,79.3,78,76,84,73,-6.3,-8
+Y33,Otros eventos especificados de intención no determinada,16.7,18,18,14,9,-7.7,-46
+Y26,Exposición al humo fuego y llamas de intención no determinada,107,111,125,85,89,-18,-17
+Y20,Ahorcamiento estrangulamiento y sofocación de intención no determinada,328.3,326,334,325,286,-42.3,-13
